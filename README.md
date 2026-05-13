@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MacKey
 
-## Getting Started
+帮助 Windows 转 Mac 的中文用户快速熟悉 macOS 的操作逻辑和快捷操作，包含键盘与触控板。
 
-First, run the development server:
+## 功能
+
+- **交互式虚拟键盘** — 按下组合键时实时高亮对应按键
+- **快捷键参考手册** — 55+ 个快捷键，8 个分类，支持搜索
+- **递进式课程** — 3 门课程（入门/进阶/触控板指南）
+- **触控板手势** — 15 个手势的详细说明和演示
+- **自由练习模式** — 真实键盘检测，匹配快捷键
+- **Mac ↔ Windows 对照** — 键位对照表，帮助从 PC 切换的用户
+
+## 技术栈
+
+Next.js 16 · React 19 · TypeScript · Tailwind CSS v4 · Zustand · react-markdown
+
+## 开发
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 [http://localhost:3000](http://localhost:3000) 查看。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 构建
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+```
 
-## Learn More
+## 许可
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
