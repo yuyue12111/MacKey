@@ -1,0 +1,2 @@
+# MacKey
+帮助windows转mac的中文用户快速熟悉macos的操作逻辑和快捷操作，包含键盘与触控板
