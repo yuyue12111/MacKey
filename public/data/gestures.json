@@ -1,0 +1,239 @@
+[
+  {
+    "id": "single-tap",
+    "nameZh": "单指轻点",
+    "descriptionZh": "用一根手指轻点触控板，相当于鼠标左键点击。是最基础的手势。",
+    "fingerCount": 1,
+    "type": "tap",
+    "scenarios": ["任何需要点击的场景"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 112, "y": 160 }],
+      "fingerEnd": [{ "x": 112, "y": 160 }],
+      "duration": 400,
+      "loop": false
+    }
+  },
+  {
+    "id": "two-finger-tap",
+    "nameZh": "双指轻点（右键）",
+    "descriptionZh": "用两根手指同时轻点触控板，相当于鼠标右键（辅助点按）。",
+    "fingerCount": 2,
+    "type": "tap",
+    "scenarios": ["弹出右键菜单", "复制粘贴上下文菜单"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 104, "y": 155 }, { "x": 136, "y": 165 }],
+      "fingerEnd": [{ "x": 104, "y": 155 }, { "x": 136, "y": 165 }],
+      "duration": 400,
+      "loop": false
+    }
+  },
+  {
+    "id": "two-finger-scroll",
+    "nameZh": "双指滚动",
+    "descriptionZh": "用两根手指在触控板上上下滑动来滚动页面或文档。在 Mac 上，默认是「自然滚动」方向（手指上推，页面下滚，像 iPhone）。",
+    "fingerCount": 2,
+    "type": "scroll",
+    "direction": "up",
+    "scenarios": ["浏览网页", "阅读文档", "滚动任何可滚动区域"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 100, "y": 200 }, { "x": 140, "y": 200 }],
+      "fingerEnd": [{ "x": 100, "y": 80 }, { "x": 140, "y": 80 }],
+      "paths": [{
+        "points": [{ "x": 120, "y": 200 }, { "x": 120, "y": 80 }],
+        "color": "rgba(212,165,116,0.4)",
+        "width": 2
+      }],
+      "duration": 1500,
+      "loop": true
+    }
+  },
+  {
+    "id": "two-finger-scroll-h",
+    "nameZh": "双指水平滚动",
+    "descriptionZh": "用两根手指左右滑动来水平滚动页面，在查看宽表格或时间线时很有用。",
+    "fingerCount": 2,
+    "type": "scroll",
+    "direction": "left",
+    "scenarios": ["水平滚动的页面", "宽表格", "时间线"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 160, "y": 140 }, { "x": 160, "y": 180 }],
+      "fingerEnd": [{ "x": 80, "y": 140 }, { "x": 80, "y": 180 }],
+      "duration": 1500,
+      "loop": true
+    }
+  },
+  {
+    "id": "pinch-zoom",
+    "nameZh": "双指缩放",
+    "descriptionZh": "用两根手指捏合或张开，放大或缩小图片、网页、PDF。像在 iPhone 上一样。",
+    "fingerCount": 2,
+    "type": "pinch",
+    "scenarios": ["查看图片", "放大网页", "缩放 PDF"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 100, "y": 140 }, { "x": 140, "y": 140 }],
+      "fingerEnd": [{ "x": 70, "y": 140 }, { "x": 170, "y": 140 }],
+      "duration": 1200,
+      "loop": true
+    }
+  },
+  {
+    "id": "two-finger-rotate",
+    "nameZh": "双指旋转",
+    "descriptionZh": "用两根手指在触控板上旋转来旋转图片或 PDF 页面。",
+    "fingerCount": 2,
+    "type": "rotate",
+    "scenarios": ["旋转图片", "旋转 PDF"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 100, "y": 130 }, { "x": 140, "y": 150 }],
+      "fingerEnd": [{ "x": 140, "y": 130 }, { "x": 100, "y": 150 }],
+      "duration": 1000,
+      "loop": true
+    }
+  },
+  {
+    "id": "smart-zoom",
+    "nameZh": "智能缩放",
+    "descriptionZh": "用两根手指双击触控板，Safari 等应用中会自动智能缩放内容到合适大小。",
+    "fingerCount": 2,
+    "type": "tap",
+    "scenarios": ["Safari 中双击缩放段落", "预览中缩放"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 108, "y": 140 }, { "x": 132, "y": 140 }],
+      "fingerEnd": [{ "x": 108, "y": 140 }, { "x": 132, "y": 140 }],
+      "duration": 500,
+      "loop": false
+    }
+  },
+  {
+    "id": "three-finger-mission-control",
+    "nameZh": "三指上滑 · Mission Control",
+    "descriptionZh": "三根手指向上滑动打开 Mission Control，鸟瞰所有窗口和桌面空间。",
+    "fingerCount": 3,
+    "type": "swipe",
+    "direction": "up",
+    "scenarios": ["查看所有打开窗口", "管理桌面空间"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 90, "y": 200 }, { "x": 120, "y": 200 }, { "x": 150, "y": 200 }],
+      "fingerEnd": [{ "x": 90, "y": 60 }, { "x": 120, "y": 60 }, { "x": 150, "y": 60 }],
+      "duration": 1200,
+      "loop": true
+    }
+  },
+  {
+    "id": "three-finger-app-expose",
+    "nameZh": "三指下滑 · 应用 Exposé",
+    "descriptionZh": "三根手指向下滑动，显示当前应用的所有打开窗口。",
+    "fingerCount": 3,
+    "type": "swipe",
+    "direction": "down",
+    "scenarios": ["找到被挡住的窗口", "在多个文档间切换"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 90, "y": 60 }, { "x": 120, "y": 60 }, { "x": 150, "y": 60 }],
+      "fingerEnd": [{ "x": 90, "y": 200 }, { "x": 120, "y": 200 }, { "x": 150, "y": 200 }],
+      "duration": 1200,
+      "loop": true
+    }
+  },
+  {
+    "id": "three-finger-switch-desktop",
+    "nameZh": "三指左右滑 · 切换桌面",
+    "descriptionZh": "三根手指向左或向右滑动，在全屏应用和不同桌面空间之间切换。",
+    "fingerCount": 3,
+    "type": "swipe",
+    "direction": "left",
+    "scenarios": ["切换工作/娱乐桌面", "切换全屏应用"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 140, "y": 120 }, { "x": 140, "y": 150 }, { "x": 140, "y": 180 }],
+      "fingerEnd": [{ "x": 60, "y": 120 }, { "x": 60, "y": 150 }, { "x": 60, "y": 180 }],
+      "duration": 1000,
+      "loop": true
+    }
+  },
+  {
+    "id": "two-finger-swipe-page",
+    "nameZh": "双指左右滑 · 浏览器前进后退",
+    "descriptionZh": "在 Safari 或 Chrome 中，用两根手指左右滑动来前进或后退一页。",
+    "fingerCount": 2,
+    "type": "swipe",
+    "direction": "left",
+    "scenarios": ["浏览器后退", "浏览器前进"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 140, "y": 140 }, { "x": 140, "y": 180 }],
+      "fingerEnd": [{ "x": 80, "y": 140 }, { "x": 80, "y": 180 }],
+      "duration": 1000,
+      "loop": true
+    }
+  },
+  {
+    "id": "four-finger-pinch-launchpad",
+    "nameZh": "四指捏合 · Launchpad",
+    "descriptionZh": "四根手指在触控板上捏合，打开 Launchpad 查看所有应用。",
+    "fingerCount": 4,
+    "type": "pinch",
+    "scenarios": ["查找应用", "整理应用图标"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 80, "y": 100 }, { "x": 160, "y": 100 }, { "x": 80, "y": 180 }, { "x": 160, "y": 180 }],
+      "fingerEnd": [{ "x": 110, "y": 130 }, { "x": 130, "y": 130 }, { "x": 110, "y": 150 }, { "x": 130, "y": 150 }],
+      "duration": 1000,
+      "loop": true
+    }
+  },
+  {
+    "id": "four-finger-spread-desktop",
+    "nameZh": "四指张开 · 显示桌面",
+    "descriptionZh": "四根手指在触控板上向外张开，将所有窗口推到一边露出桌面。",
+    "fingerCount": 4,
+    "type": "pinch",
+    "scenarios": ["快速访问桌面文件", "清理视野"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 110, "y": 130 }, { "x": 130, "y": 130 }, { "x": 110, "y": 150 }, { "x": 130, "y": 150 }],
+      "fingerEnd": [{ "x": 70, "y": 90 }, { "x": 170, "y": 90 }, { "x": 70, "y": 190 }, { "x": 170, "y": 190 }],
+      "duration": 1000,
+      "loop": true
+    }
+  },
+  {
+    "id": "two-finger-notification",
+    "nameZh": "双指从右滑入 · 通知中心",
+    "descriptionZh": "两根手指从触控板右侧边缘向左滑动，打开通知中心。",
+    "fingerCount": 2,
+    "type": "swipe",
+    "direction": "left",
+    "scenarios": ["查看通知", "查看今日小组件"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 200, "y": 120 }, { "x": 200, "y": 160 }],
+      "fingerEnd": [{ "x": 120, "y": 120 }, { "x": 120, "y": 160 }],
+      "duration": 1000,
+      "loop": true
+    }
+  },
+  {
+    "id": "force-click",
+    "nameZh": "力度点按（Force Click）",
+    "descriptionZh": "用一根手指用力按下触控板，触发力度感应。可查字典、预览链接/文件等。需要支持力度触控的 MacBook。",
+    "fingerCount": 1,
+    "type": "force-click",
+    "scenarios": ["查字典定义", "预览链接", "预览文件", "查看地址"],
+    "animation": {
+      "type": "canvas",
+      "fingerStart": [{ "x": 120, "y": 140 }],
+      "fingerEnd": [{ "x": 120, "y": 140 }],
+      "duration": 600,
+      "loop": false
+    }
+  }
+]

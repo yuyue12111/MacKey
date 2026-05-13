@@ -1,0 +1,420 @@
+[
+  {
+    "id": "intro-mac",
+    "slug": "intro-mac",
+    "titleZh": "macOS 入门必修课",
+    "subtitleZh": "从 Windows 切换到 Mac？从这里开始",
+    "descriptionZh": "认识 ⌘⌥⌃⇧ 四个修饰键，掌握最实用的快捷键，学会截图三式。从 Windows 转到 Mac 的第一课。",
+    "targetAudience": "Mac 新手，尤其是刚从 Windows 转过来的用户",
+    "estimatedMinutes": 45,
+    "difficulty": "basic",
+    "order": 1,
+    "chapters": [
+      {
+        "id": "intro-ch1",
+        "courseId": "intro-mac",
+        "titleZh": "认识你的键盘",
+        "descriptionZh": "认识 Mac 键盘布局、四个修饰键分别是什么、和 Windows 键盘的对应关系",
+        "order": 1,
+        "lessons": [
+          {
+            "id": "intro-ch1-l1",
+            "chapterId": "intro-ch1",
+            "titleZh": "Mac 键盘布局一览",
+            "contentType": "text",
+            "content": "## Mac 键盘布局\n\nMac 键盘看起来和 Windows 键盘很像，但有几个关键区别：\n\n### 修饰键四大金刚\n\nMac 键盘底部有四个修饰键，从左到右分别是：\n\n- **Fn**（功能键）—— 地球键 🌐 或 Fn，用于切换输入法、打开表情面板\n- **⌃ Control** — 键盘上标注 `⌃` 或 `control`，主要用于终端操作（如 ⌃C 中断命令）\n- **⌥ Option** — 键盘上标注 `⌥` 或 `option`，相当于 Windows 的 Alt 键，但功能更多\n- **⌘ Command** — 键盘上标注 `⌘` 或 `command`，是 Mac 上最重要的修饰键，相当于 Windows 的 Ctrl 键\n\n### 和 Windows 键盘的对应关系\n\n| Mac 键 | Windows 键 | 说明 |\n|--------|-----------|------|\n| ⌘ Command | Ctrl | 最常用的快捷键（复制/粘贴/撤销等）都用 ⌘ |\n| ⌥ Option | Alt | 用于高级操作（逐词移动、特殊字符等）|\n| ⌃ Control | Ctrl | 主要用于终端，日常用得比 Windows 少 |\n| Fn/🌐 | — | 切换输入法、打开表情面板 |\n\n> **记忆要点**：在 Mac 上做 Windows 中 `Ctrl+?` 的操作，大多数时候把 Ctrl 换成 ⌘ 就行了。",
+            "shortcutIds": [],
+            "estimatedMinutes": 5,
+            "order": 1
+          },
+          {
+            "id": "intro-ch1-l2",
+            "chapterId": "intro-ch1",
+            "titleZh": "修饰键速记",
+            "contentType": "interactive",
+            "content": "## 认识四个符号\n\nMac 键盘和菜单中经常出现这些符号，记住它们：\n\n- **⌃** = Control（像一棵小树）\n- **⌥** = Option（像一个岔路）\n- **⌘** = Command（像一个四叶草/环形立交桥）\n- **⇧** = Shift（向上的箭头）\n\n现在试着在下面的虚拟键盘上找到这 4 个键，点击它们看看高亮效果。",
+            "shortcutIds": [],
+            "interactive": {
+              "type": "key-press",
+              "config": { "targetKeys": ["ControlLeft", "AltLeft", "MetaLeft", "ShiftLeft"] }
+            },
+            "estimatedMinutes": 3,
+            "order": 2
+          }
+        ]
+      },
+      {
+        "id": "intro-ch2",
+        "courseId": "intro-mac",
+        "titleZh": "最常用的 10 个快捷键",
+        "descriptionZh": "学习复制粘贴、撤销重做、切换应用、Spotlight 搜索等最核心的快捷键",
+        "order": 2,
+        "lessons": [
+          {
+            "id": "intro-ch2-l1",
+            "chapterId": "intro-ch2",
+            "titleZh": "拷贝与粘贴（⌘C / ⌘V）",
+            "contentType": "text",
+            "content": "## 拷贝与粘贴\n\n这是使用频率最高的两个快捷键：\n\n- **⌘C** = 拷贝（Copy）\n- **⌘V** = 粘贴（Paste）\n- **⌘X** = 剪切（Cut）\n\n> Windows 用户注意：Mac 用 ⌘ 而不是 Ctrl。记住这个转换，90% 的快捷键你都能猜到。\n\n### 进阶：粘贴并匹配样式\n\n从网页复制文字粘贴到文档时，常常带着原来的格式。用 **⌥⇧⌘V** 可以在粘贴时自动匹配当前位置的文字样式。",
+            "shortcutIds": ["copy", "paste", "cut", "paste-match-style"],
+            "estimatedMinutes": 5,
+            "order": 1
+          },
+          {
+            "id": "intro-ch2-l2",
+            "chapterId": "intro-ch2",
+            "titleZh": "撤销与重做（⌘Z / ⇧⌘Z）",
+            "contentType": "text",
+            "content": "## 撤销与重做\n\n- **⌘Z** = 撤销（Undo），回到上一步\n- **⇧⌘Z** = 重做（Redo），恢复刚刚撤销的操作\n\nMac 的撤销功能非常强大，几乎所有应用都支持。写文、P 图、甚至移动文件后都可以撤销。",
+            "shortcutIds": ["undo", "redo"],
+            "estimatedMinutes": 3,
+            "order": 2
+          },
+          {
+            "id": "intro-ch2-l3",
+            "chapterId": "intro-ch2",
+            "titleZh": "应用与窗口操作（⌘Q / ⌘W / ⌘Tab）",
+            "contentType": "text",
+            "content": "## 应用与窗口操作\n\n这是 Mac 和 Windows 最大的思维差异之一：\n\n### 关闭窗口 ≠ 退出应用\n\n- **⌘W** = 关闭**窗口**\n- **⌘Q** = 退出**应用**\n\n在 Mac 上，点窗口左上角的「×」只是关闭了窗口，应用还在后台运行（看 Dock 栏上的小点就知道了）。要真正退出应用，用 ⌘Q。\n\n### 切换应用\n\n- **⌘Tab** = 切换应用\n- **按住 ⌘ 不放**，反复按 Tab 可以在应用间循环切换\n- 配合 **⇧**（⌘⇧Tab）可以反向切换",
+            "shortcutIds": ["quit-app", "close-window", "switch-app"],
+            "estimatedMinutes": 5,
+            "order": 3
+          },
+          {
+            "id": "intro-ch2-l4",
+            "chapterId": "intro-ch2",
+            "titleZh": "Spotlight 搜索（⌘Space）",
+            "contentType": "text",
+            "content": "## Spotlight — Mac 的万能入口\n\n按下 **⌘Space**，打开 Spotlight 搜索栏。它可以：\n\n- 🔍 **启动应用** — 输入应用名前几个字母，回车打开\n- 🧮 **当计算器** — 直接输入算式，如 `(128+256)*3`\n- 📖 **查字典** — 输入英文单词，直接显示释义\n- 📁 **搜文件** — 输入文件名，快速定位\n- ✉️ **搜邮件/联系人** — 输入名字直接发邮件\n\n> 这是 Mac 最高效的入口，把鼠标点 Dock 栏的习惯换成 ⌘Space，效率翻倍。",
+            "shortcutIds": ["spotlight"],
+            "estimatedMinutes": 5,
+            "order": 4
+          },
+          {
+            "id": "intro-ch2-l5",
+            "chapterId": "intro-ch2",
+            "titleZh": "全选、查找、保存（⌘A / ⌘F / ⌘S）",
+            "contentType": "text",
+            "content": "## 其他高频快捷键\n\n- **⌘A** = 全选\n- **⌘F** = 查找\n- **⌘S** = 保存\n- **⌘N** = 新建窗口\n- **⌘T** = 新建标签页\n- **⌘, ** = 打开偏好设置\n\n> 养成随手 ⌘S 保存的习惯！虽然 Mac 应用大多有自动保存，但习惯永远不会害你。",
+            "shortcutIds": ["select-all", "find", "save", "new-window", "new-tab", "preferences"],
+            "estimatedMinutes": 5,
+            "order": 5
+          }
+        ]
+      },
+      {
+        "id": "intro-ch3",
+        "courseId": "intro-mac",
+        "titleZh": "截图从此简单",
+        "descriptionZh": "全屏截图、区域截图、截图工具栏，以及截图到剪贴板的进阶用法",
+        "order": 3,
+        "lessons": [
+          {
+            "id": "intro-ch3-l1",
+            "chapterId": "intro-ch3",
+            "titleZh": "三种截图方式",
+            "contentType": "text",
+            "content": "## Mac 截图三式\n\nmacOS 的截图功能非常强大，三种方式记住：\n\n- **⇧⌘3** = 全屏截图（整个屏幕）\n- **⇧⌘4** = 区域截图（十字准星拖选区域）\n- **⇧⌘5** = 截图工具栏（可选全屏/窗口/区域 + 屏幕录制）\n\n截图默认保存到桌面，文件名格式为「截屏 日期 时间」。\n\n### 区域截图小技巧\n\n按 ⇧⌘4 进入区域选择后：\n- 按住 **Space** → 切换为窗口截图模式\n- 按住 **⇧** → 锁定宽度或高度\n- 按住 **⌥** → 从中心缩放选区",
+            "shortcutIds": ["screenshot-full", "screenshot-area", "screenshot-tool"],
+            "estimatedMinutes": 8,
+            "order": 1
+          },
+          {
+            "id": "intro-ch3-l2",
+            "chapterId": "intro-ch3",
+            "titleZh": "截图到剪贴板",
+            "contentType": "text",
+            "content": "## 截图到剪贴板\n\n如果你想把截图直接粘贴到聊天或文档（而不是保存到桌面上再删除），在截图快捷键中加 ⌃：\n\n- **⌃⇧⌘3** = 全屏截图 → 剪贴板\n- **⌃⇧⌘4** = 区域截图 → 剪贴板\n\n截图后直接 ⌘V 粘贴到对话或文档中，不需要临时文件。",
+            "shortcutIds": ["screenshot-clipboard"],
+            "estimatedMinutes": 3,
+            "order": 2
+          }
+        ]
+      },
+      {
+        "id": "intro-ch4",
+        "courseId": "intro-mac",
+        "titleZh": "综合练习与测验",
+        "descriptionZh": "用交互式练习巩固前三章学到的所有快捷键",
+        "order": 4,
+        "lessons": [
+          {
+            "id": "intro-ch4-l1",
+            "chapterId": "intro-ch4",
+            "titleZh": "互动练习：按出正确的快捷键",
+            "contentType": "practice",
+            "content": "请在键盘上按下对应的快捷键来完成任务。看到提示后，按下正确的组合键。",
+            "shortcutIds": ["copy", "paste", "quit-app", "close-window", "spotlight", "select-all", "screenshot-area", "switch-app", "undo", "redo"],
+            "interactive": { "type": "key-press", "config": {} },
+            "estimatedMinutes": 10,
+            "order": 1
+          },
+          {
+            "id": "intro-ch4-l2",
+            "chapterId": "intro-ch4",
+            "titleZh": "入门课结业测验",
+            "contentType": "quiz",
+            "content": "完成以下测验来检验你的学习成果。正确率达到 80% 即为通过。",
+            "shortcutIds": [],
+            "checkpoint": {
+              "questionCount": 10,
+              "shortcutPool": ["copy", "paste", "cut", "quit-app", "close-window", "switch-app", "spotlight", "undo", "redo", "select-all", "find", "save", "screenshot-full", "screenshot-area", "preferences", "new-tab"],
+              "passThreshold": 80
+            },
+            "estimatedMinutes": 5,
+            "order": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "efficiency-pro",
+    "slug": "efficiency-pro",
+    "titleZh": "效率翻倍进阶课",
+    "subtitleZh": "让你的键盘操作成为肌肉记忆",
+    "descriptionZh": "学习窗口管理、Emacs 风格光标移动、访达高效操作、浏览器快捷键，将键盘效率提升到新高度。",
+    "targetAudience": "已经熟悉基础快捷键，想进一步提升效率的 Mac 用户",
+    "estimatedMinutes": 60,
+    "difficulty": "intermediate",
+    "order": 2,
+    "chapters": [
+      {
+        "id": "eff-ch1",
+        "courseId": "efficiency-pro",
+        "titleZh": "窗口管理大师",
+        "descriptionZh": "Mission Control、多桌面、分屏操作、隐藏窗口等高级窗口管理",
+        "order": 1,
+        "lessons": [
+          {
+            "id": "eff-ch1-l1",
+            "chapterId": "eff-ch1",
+            "titleZh": "Mission Control 与多桌面",
+            "contentType": "text",
+            "content": "## Mission Control\n\n**⌃↑** 打开 Mission Control，鸟瞰所有窗口和桌面空间。\n\n在 Mission Control 视图中：\n- 顶部是桌面空间列表，可以把窗口拖到不同桌面\n- 可以新建桌面（点击右上角 +）\n- 每个桌面可以放不同场景的应用（工作桌面 vs 娱乐桌面）\n\n### 关联手势\n\n- 三指/四指上滑 = Mission Control\n- 三指/四指左右滑 = 切换桌面",
+            "shortcutIds": ["mission-control"],
+            "estimatedMinutes": 6,
+            "order": 1
+          },
+          {
+            "id": "eff-ch1-l2",
+            "chapterId": "eff-ch1",
+            "titleZh": "分屏操作",
+            "contentType": "text",
+            "content": "## 分屏（Split View）\n\n将两个应用并排填满屏幕：\n\n1. 鼠标悬停在窗口左上角的绿色按钮\n2. 选择「将窗口拼贴到屏幕左侧」或「右侧」\n3. 另一侧点击要分屏的另一个应用\n\n### 隐藏与专注\n\n- **⌘H** = 隐藏当前应用\n- **⌥⌘H** = 隐藏其他所有应用（专注模式利器）\n- **⌃⌘F** = 进入/退出全屏",
+            "shortcutIds": ["hide-app", "hide-others", "fullscreen"],
+            "estimatedMinutes": 6,
+            "order": 2
+          }
+        ]
+      },
+      {
+        "id": "eff-ch2",
+        "courseId": "efficiency-pro",
+        "titleZh": "文本编辑飞起来",
+        "descriptionZh": "学习 Emacs 风格光标移动、Option 键的进阶文本操作",
+        "order": 2,
+        "lessons": [
+          {
+            "id": "eff-ch2-l1",
+            "chapterId": "eff-ch2",
+            "titleZh": "Option 键的文本魔法",
+            "contentType": "text",
+            "content": "## Option 键——文本编辑的加速器\n\n按住 ⌥ 键后，很多操作从「逐字母」变成「逐单词」：\n\n- **⌥←** / **⌥→** = 逐词移动光标\n- **⇧⌥←** / **⇧⌥→** = 逐词选择文本\n- **⌥⌫** = 逐词删除（向左删一个单词）\n\n这些快捷键在所有原生 Mac 应用的文本框中都能用，写邮件、填表、写代码都适用。",
+            "shortcutIds": ["cursor-word-left", "cursor-word-right", "select-word", "delete-word"],
+            "estimatedMinutes": 6,
+            "order": 1
+          },
+          {
+            "id": "eff-ch2-l2",
+            "chapterId": "eff-ch2",
+            "titleZh": "Emacs 风格快捷键",
+            "contentType": "text",
+            "content": "## macOS 隐藏的 Emacs 快捷键\n\nmacOS 在几乎所有文本框中内置了一组 Emacs 风格的快捷键，用 ⌃ 操作：\n\n- **⌃F** = 光标右移（Forward）\n- **⌃B** = 光标左移（Backward）\n- **⌃N** = 光标下移（Next line）\n- **⌃P** = 光标上移（Previous line）\n- **⌃A** = 跳到行首（像 ⌘← 一样，但手不用离开主键盘）\n- **⌃E** = 跳到行尾（End of line）\n\n### 为什么学它？\n\nEmacs 快捷键的键位在主键盘区（字母区），手指不需要移动到方向键。一旦养成习惯，打字和光标移动之间的切换几乎零成本。",
+            "shortcutIds": ["control-b", "control-f", "control-n", "control-p", "control-a", "control-e"],
+            "estimatedMinutes": 8,
+            "order": 2
+          },
+          {
+            "id": "eff-ch2-l3",
+            "chapterId": "eff-ch2",
+            "titleZh": "文本编辑综合练习",
+            "contentType": "practice",
+            "content": "试试在下面的文本编辑区中，只用键盘完成以下操作：\n1. 光标跳到行首（⌃A）\n2. 逐词右移 3 个词（⌥→ × 3）\n3. 逐词选择 2 个词（⇧⌥→ × 2）\n4. 删除选中的 2 个词（⌫）",
+            "shortcutIds": ["control-a", "cursor-word-right", "select-word", "delete-word"],
+            "interactive": { "type": "key-press", "config": {} },
+            "estimatedMinutes": 8,
+            "order": 3
+          }
+        ]
+      },
+      {
+        "id": "eff-ch3",
+        "courseId": "efficiency-pro",
+        "titleZh": "访达高效操作",
+        "descriptionZh": "快速预览、路径跳转、文件删除等访达快捷键",
+        "order": 3,
+        "lessons": [
+          {
+            "id": "eff-ch3-l1",
+            "chapterId": "eff-ch3",
+            "titleZh": "快速预览与文件操作",
+            "contentType": "text",
+            "content": "## 访达中的重要快捷键\n\n### 快速预览（Quick Look）\n\n选中文件后按**空格键**，不用打开应用就能预览文件内容。支持图片、PDF、文档、视频等几乎所有格式。\n\n预览打开后按上下箭头可以在文件间切换。\n\n### 文件操作\n\n- **⌘⌫** = 移到废纸篓\n- **⌥⌘⌫** = 立即永久删除（不经过废纸篓）\n- **⌘D** = 制作副本\n- **⌘I** = 显示简介（查看文件信息）\n\n### 快速跳转\n\n- **⇧⌘G** = 前往文件夹（输入路径）\n- **⇧⌘H** = 前往个人文件夹\n- **⇧⌘A** = 前往应用程序文件夹\n- **⇧⌘D** = 前往桌面文件夹",
+            "shortcutIds": ["finder-preview", "finder-delete", "finder-delete-permanent", "finder-duplicate", "finder-info", "finder-go-folder", "finder-home", "finder-applications", "finder-desktop"],
+            "estimatedMinutes": 10,
+            "order": 1
+          }
+        ]
+      },
+      {
+        "id": "eff-ch4",
+        "courseId": "efficiency-pro",
+        "titleZh": "浏览器快捷键",
+        "descriptionZh": "Safari 和 Chrome 中通用的浏览器效率快捷键",
+        "order": 4,
+        "lessons": [
+          {
+            "id": "eff-ch4-l1",
+            "chapterId": "eff-ch4",
+            "titleZh": "标签页与导航",
+            "contentType": "text",
+            "content": "## 浏览器快捷键\n\n以下快捷键在 Safari 和 Chrome 等主流浏览器中通用：\n\n- **⌘T** = 新建标签页\n- **⌘W** = 关闭标签页\n- **⇧⌘T** = 恢复刚关闭的标签页\n- **⌃⇥** = 切换到下一个标签页\n- **⇧⌃⇥** = 切换到上一个标签页\n- **⌘L** = 聚焦地址栏\n- **⌘R** = 刷新页面\n- **⌥⌘B** = 显示/隐藏书签栏\n- **⌘D** = 添加当前页到书签",
+            "shortcutIds": ["new-tab", "browser-close-tab", "browser-reopen-tab", "browser-next-tab", "browser-address-bar", "browser-reload", "browser-bookmarks"],
+            "estimatedMinutes": 6,
+            "order": 1
+          }
+        ]
+      },
+      {
+        "id": "eff-ch5",
+        "courseId": "efficiency-pro",
+        "titleZh": "进阶综合练习与测验",
+        "descriptionZh": "综合练习和结业测验",
+        "order": 5,
+        "lessons": [
+          {
+            "id": "eff-ch5-l1",
+            "chapterId": "eff-ch5",
+            "titleZh": "进阶互动练习",
+            "contentType": "practice",
+            "content": "完成以下快捷键操作挑战",
+            "shortcutIds": ["cursor-word-left", "cursor-word-right", "control-a", "control-e", "mission-control", "hide-others", "finder-preview", "browser-reopen-tab"],
+            "interactive": { "type": "key-press", "config": {} },
+            "estimatedMinutes": 10,
+            "order": 1
+          },
+          {
+            "id": "eff-ch5-l2",
+            "chapterId": "eff-ch5",
+            "titleZh": "进阶结业测验",
+            "contentType": "quiz",
+            "content": "完成测验检验学习成果",
+            "shortcutIds": [],
+            "checkpoint": {
+              "questionCount": 12,
+              "shortcutPool": ["cursor-word-left", "cursor-word-right", "select-word", "delete-word", "control-a", "control-e", "control-n", "control-p", "mission-control", "hide-others", "fullscreen", "finder-preview", "finder-go-folder", "browser-reopen-tab", "browser-address-bar"],
+              "passThreshold": 80
+            },
+            "estimatedMinutes": 5,
+            "order": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "trackpad-guide",
+    "slug": "trackpad-guide",
+    "titleZh": "触控板完全指南",
+    "subtitleZh": "Mac 的触控板，远不止点击和滚动",
+    "descriptionZh": "从单指点击到四指切换桌面，用动画演示每个手势的运动轨迹。掌握 Mac 触控板隐藏的全部潜力。",
+    "targetAudience": "所有 MacBook 用户，想充分发挥触控板能力的人",
+    "estimatedMinutes": 30,
+    "difficulty": "basic",
+    "order": 3,
+    "chapters": [
+      {
+        "id": "tpad-ch1",
+        "courseId": "trackpad-guide",
+        "titleZh": "基础手势",
+        "descriptionZh": "单击、右键、滚动、缩放——触控板的基本操作",
+        "order": 1,
+        "lessons": [
+          {
+            "id": "tpad-ch1-l1",
+            "chapterId": "tpad-ch1",
+            "titleZh": "单指和双指操作",
+            "contentType": "text",
+            "content": "## 基础触控板手势\n\n### 单指操作\n- **单指轻点** = 点击\n- **单指按下** = 用力点按（Force Click，仅支持力度触控板的 Mac）\n\n### 双指操作\n- **双指轻点** = 辅助点按（右键）\n- **双指上下滑动** = 滚动页面\n- **双指左右滑动** = 水平滚动\n- **双指捏合** = 放大/缩小\n- **双指旋转** = 旋转图片/PDF\n\n### 自然滚动方向\n\nMac 默认使用「自然」滚动方向（手指上推，页面下滚——像在 iPhone 上一样）。如果你习惯 Windows 的反方向，可以在「系统设置 → 触控板 → 滚动与缩放」中关闭「自然滚动」。",
+            "shortcutIds": [],
+            "estimatedMinutes": 5,
+            "order": 1
+          }
+        ]
+      },
+      {
+        "id": "tpad-ch2",
+        "courseId": "trackpad-guide",
+        "titleZh": "导航手势",
+        "descriptionZh": "多桌面切换、Mission Control、浏览器页面前进后退",
+        "order": 2,
+        "lessons": [
+          {
+            "id": "tpad-ch2-l1",
+            "chapterId": "tpad-ch2",
+            "titleZh": "三指和四指手势",
+            "contentType": "text",
+            "content": "## 多指手势\n\n### 三指手势\n- **三指上滑** = Mission Control\n- **三指下滑** = 应用 Exposé（显示当前应用所有窗口）\n- **三指左右滑** = 切换桌面空间\n\n### 四指手势\n- **四指上滑** = Mission Control（和三指相同）\n- **四指捏合** = Launchpad\n- **四指张开** = 显示桌面\n\n### 浏览器导航\n- **双指左右滑** = Safari/Chrome 中前进/后退一页\n- **双指从右侧滑入** = 通知中心",
+            "shortcutIds": [],
+            "estimatedMinutes": 8,
+            "order": 1
+          }
+        ]
+      },
+      {
+        "id": "tpad-ch3",
+        "courseId": "trackpad-guide",
+        "titleZh": "高级手势",
+        "descriptionZh": "三指拖移、Force Click、自定义手势",
+        "order": 3,
+        "lessons": [
+          {
+            "id": "tpad-ch3-l1",
+            "chapterId": "tpad-ch3",
+            "titleZh": "三指拖移与 Force Click",
+            "contentType": "text",
+            "content": "## 三指拖移\n\n三指拖移是移动窗口、选择文本的高效方式：\n\n1. 打开「系统设置 → 辅助功能 → 指针控制 → 触控板选项」\n2. 启用「使用触控板进行拖移」\n3. 选择「三指拖移」\n\n之后用三指在触控板上滑动就可以拖移窗口、选择文本，不需要按住触控板。\n\n## Force Click（力度触控）\n\n支持力度触控的 Mac 触控板：\n- **用力按一个词** = 查字典/维基百科\n- **用力按一个链接** = 预览网页\n- **用力按一个文件** = Quick Look 预览\n- **用力按一个地址** = 在地图中预览",
+            "shortcutIds": [],
+            "estimatedMinutes": 5,
+            "order": 1
+          }
+        ]
+      },
+      {
+        "id": "tpad-ch4",
+        "courseId": "trackpad-guide",
+        "titleZh": "手势综合测验",
+        "descriptionZh": "测验手势知识",
+        "order": 4,
+        "lessons": [
+          {
+            "id": "tpad-ch4-l1",
+            "chapterId": "tpad-ch4",
+            "titleZh": "触控板手势测验",
+            "contentType": "quiz",
+            "content": "完成测验检验你对触控板手势的掌握程度",
+            "shortcutIds": [],
+            "checkpoint": {
+              "questionCount": 8,
+              "shortcutPool": [],
+              "passThreshold": 80
+            },
+            "estimatedMinutes": 5,
+            "order": 1
+          }
+        ]
+      }
+    ]
+  }
+]
