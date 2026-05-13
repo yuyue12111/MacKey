@@ -54,9 +54,18 @@
             "id": "intro-ch2-l1",
             "chapterId": "intro-ch2",
             "titleZh": "拷贝与粘贴（⌘C / ⌘V）",
-            "contentType": "text",
-            "content": "## 拷贝与粘贴\n\n这是使用频率最高的两个快捷键：\n\n- **⌘C** = 拷贝（Copy）\n- **⌘V** = 粘贴（Paste）\n- **⌘X** = 剪切（Cut）\n\n> Windows 用户注意：Mac 用 ⌘ 而不是 Ctrl。记住这个转换，90% 的快捷键你都能猜到。\n\n### 进阶：粘贴并匹配样式\n\n从网页复制文字粘贴到文档时，常常带着原来的格式。用 **⌥⇧⌘V** 可以在粘贴时自动匹配当前位置的文字样式。",
+            "contentType": "interactive",
+            "content": "在文本编辑场景中练习拷贝、粘贴、剪切和粘贴匹配样式。",
             "shortcutIds": ["copy", "paste", "cut", "paste-match-style"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "text-editor",
+              "steps": [
+                { "prompt": "复制下面这段文字", "targetShortcutId": "copy", "feedback": "文字已复制！" },
+                { "prompt": "把刚才复制的内容粘贴到目标区", "targetShortcutId": "paste", "feedback": "粘贴成功！" },
+                { "prompt": "把源文字剪切到目标区", "targetShortcutId": "cut", "feedback": "文字已剪切！" },
+                { "prompt": "用 ⌥⇧⌘V 粘贴并匹配目标区样式", "targetShortcutId": "paste-match-style", "feedback": "已匹配样式！" }
+              ]
+            }},
             "estimatedMinutes": 5,
             "order": 1
           },
@@ -64,9 +73,17 @@
             "id": "intro-ch2-l2",
             "chapterId": "intro-ch2",
             "titleZh": "撤销与重做（⌘Z / ⇧⌘Z）",
-            "contentType": "text",
-            "content": "## 撤销与重做\n\n- **⌘Z** = 撤销（Undo），回到上一步\n- **⇧⌘Z** = 重做（Redo），恢复刚刚撤销的操作\n\nMac 的撤销功能非常强大，几乎所有应用都支持。写文、P 图、甚至移动文件后都可以撤销。",
+            "contentType": "interactive",
+            "content": "在文本编辑场景中练习撤销和重做操作。",
             "shortcutIds": ["undo", "redo"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "text-editor",
+              "steps": [
+                { "prompt": "先看看目标区的内容——现在我们想撤回它。按下 ⌘Z 撤销", "targetShortcutId": "undo", "feedback": "已撤销！目标区的文字消失了" },
+                { "prompt": "撤销后反悔了？按下 ⇧⌘Z 重做", "targetShortcutId": "redo", "feedback": "已重做！文字恢复了" },
+                { "prompt": "再次按下 ⌘Z 撤销，感受撤销和重做的切换", "targetShortcutId": "undo", "feedback": "再次撤销！⌘Z 和 ⇧⌘Z 是所有 Mac 应用的通用操作" }
+              ]
+            }},
             "estimatedMinutes": 3,
             "order": 2
           },
@@ -74,9 +91,17 @@
             "id": "intro-ch2-l3",
             "chapterId": "intro-ch2",
             "titleZh": "应用与窗口操作（⌘Q / ⌘W / ⌘Tab）",
-            "contentType": "text",
-            "content": "## 应用与窗口操作\n\n这是 Mac 和 Windows 最大的思维差异之一：\n\n### 关闭窗口 ≠ 退出应用\n\n- **⌘W** = 关闭**窗口**\n- **⌘Q** = 退出**应用**\n\n在 Mac 上，点窗口左上角的「×」只是关闭了窗口，应用还在后台运行（看 Dock 栏上的小点就知道了）。要真正退出应用，用 ⌘Q。\n\n### 切换应用\n\n- **⌘Tab** = 切换应用\n- **按住 ⌘ 不放**，反复按 Tab 可以在应用间循环切换\n- 配合 **⇧**（⌘⇧Tab）可以反向切换",
+            "contentType": "interactive",
+            "content": "在模拟桌面中练习关闭窗口、退出应用和切换应用。",
             "shortcutIds": ["quit-app", "close-window", "switch-app"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "desktop",
+              "steps": [
+                { "prompt": "按下 ⌘W 关闭 Safari 窗口", "targetShortcutId": "close-window", "feedback": "窗口已关闭！注意：应用仍在后台运行" },
+                { "prompt": "按下 ⌘Q 完全退出 Safari 应用", "targetShortcutId": "quit-app", "feedback": "应用已完全退出！" },
+                { "prompt": "按下 ⌘Tab 在应用间切换", "targetShortcutId": "switch-app", "feedback": "应用切换中！" }
+              ]
+            }},
             "estimatedMinutes": 5,
             "order": 3
           },
@@ -84,9 +109,16 @@
             "id": "intro-ch2-l4",
             "chapterId": "intro-ch2",
             "titleZh": "Spotlight 搜索（⌘Space）",
-            "contentType": "text",
-            "content": "## Spotlight — Mac 的万能入口\n\n按下 **⌘Space**，打开 Spotlight 搜索栏。它可以：\n\n- 🔍 **启动应用** — 输入应用名前几个字母，回车打开\n- 🧮 **当计算器** — 直接输入算式，如 `(128+256)*3`\n- 📖 **查字典** — 输入英文单词，直接显示释义\n- 📁 **搜文件** — 输入文件名，快速定位\n- ✉️ **搜邮件/联系人** — 输入名字直接发邮件\n\n> 这是 Mac 最高效的入口，把鼠标点 Dock 栏的习惯换成 ⌘Space，效率翻倍。",
+            "contentType": "interactive",
+            "content": "在模拟桌面中练习打开 Spotlight 搜索。",
             "shortcutIds": ["spotlight"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "desktop",
+              "steps": [
+                { "prompt": "按下 ⌘Space 打开 Spotlight 搜索", "targetShortcutId": "spotlight", "feedback": "Spotlight 已打开！" },
+                { "prompt": "想象你在搜索一个应用——Spotlight 可以搜索应用、文件、邮件、联系人，甚至做计算器", "targetShortcutId": "spotlight", "feedback": "Spotlight 是 Mac 最高效的入口！记住 ⌘Space" }
+              ]
+            }},
             "estimatedMinutes": 5,
             "order": 4
           },
@@ -94,9 +126,19 @@
             "id": "intro-ch2-l5",
             "chapterId": "intro-ch2",
             "titleZh": "全选、查找、保存（⌘A / ⌘F / ⌘S）",
-            "contentType": "text",
-            "content": "## 其他高频快捷键\n\n- **⌘A** = 全选\n- **⌘F** = 查找\n- **⌘S** = 保存\n- **⌘N** = 新建窗口\n- **⌘T** = 新建标签页\n- **⌘, ** = 打开偏好设置\n\n> 养成随手 ⌘S 保存的习惯！虽然 Mac 应用大多有自动保存，但习惯永远不会害你。",
+            "contentType": "interactive",
+            "content": "在场景中练习全选、查找、保存、新建窗口、新建标签和偏好设置。",
             "shortcutIds": ["select-all", "find", "save", "new-window", "new-tab", "preferences"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "desktop",
+              "steps": [
+                { "prompt": "按下 ⌘S 保存当前文件", "targetShortcutId": "save", "feedback": "文件已保存 ✓" },
+                { "prompt": "按下 ⌘F 打开查找", "targetShortcutId": "find", "feedback": "查找栏已打开 ✓" },
+                { "prompt": "按下 ⌘N 新建一个窗口", "targetShortcutId": "new-window", "feedback": "新窗口已创建 ✓" },
+                { "prompt": "按下 ⌘T 新建一个标签页", "targetShortcutId": "new-tab", "feedback": "新标签页已打开 ✓" },
+                { "prompt": "按下 ⌘, 打开偏好设置", "targetShortcutId": "preferences", "feedback": "偏好设置已打开 ✓" }
+              ]
+            }},
             "estimatedMinutes": 5,
             "order": 5
           }
@@ -113,9 +155,17 @@
             "id": "intro-ch3-l1",
             "chapterId": "intro-ch3",
             "titleZh": "三种截图方式",
-            "contentType": "text",
-            "content": "## Mac 截图三式\n\nmacOS 的截图功能非常强大，三种方式记住：\n\n- **⇧⌘3** = 全屏截图（整个屏幕）\n- **⇧⌘4** = 区域截图（十字准星拖选区域）\n- **⇧⌘5** = 截图工具栏（可选全屏/窗口/区域 + 屏幕录制）\n\n截图默认保存到桌面，文件名格式为「截屏 日期 时间」。\n\n### 区域截图小技巧\n\n按 ⇧⌘4 进入区域选择后：\n- 按住 **Space** → 切换为窗口截图模式\n- 按住 **⇧** → 锁定宽度或高度\n- 按住 **⌥** → 从中心缩放选区",
+            "contentType": "interactive",
+            "content": "在模拟屏幕中练习三种截图方式：全屏、区域和截图工具栏。",
             "shortcutIds": ["screenshot-full", "screenshot-area", "screenshot-tool"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "screenshot",
+              "steps": [
+                { "prompt": "按下 ⇧⌘3 进行全屏截图", "targetShortcutId": "screenshot-full", "feedback": "全屏截图成功！截图已保存到桌面" },
+                { "prompt": "按下 ⇧⌘4 进行区域截图，拖选屏幕中央的区域", "targetShortcutId": "screenshot-area", "feedback": "区域截图成功！已截取选中区域" },
+                { "prompt": "按下 ⇧⌘5 打开截图工具栏", "targetShortcutId": "screenshot-tool", "feedback": "截图工具栏已打开，可选择全屏/窗口/区域/录屏" }
+              ]
+            }},
             "estimatedMinutes": 8,
             "order": 1
           },
@@ -123,9 +173,16 @@
             "id": "intro-ch3-l2",
             "chapterId": "intro-ch3",
             "titleZh": "截图到剪贴板",
-            "contentType": "text",
-            "content": "## 截图到剪贴板\n\n如果你想把截图直接粘贴到聊天或文档（而不是保存到桌面上再删除），在截图快捷键中加 ⌃：\n\n- **⌃⇧⌘3** = 全屏截图 → 剪贴板\n- **⌃⇧⌘4** = 区域截图 → 剪贴板\n\n截图后直接 ⌘V 粘贴到对话或文档中，不需要临时文件。",
+            "contentType": "interactive",
+            "content": "练习截图直接保存到剪贴板，不生成桌面文件。",
             "shortcutIds": ["screenshot-clipboard"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "screenshot",
+              "steps": [
+                { "prompt": "按下 ⌃⇧⌘4 截取屏幕的一部分，直接保存到剪贴板", "targetShortcutId": "screenshot-clipboard", "feedback": "截图已复制到剪贴板！不生成桌面文件" },
+                { "prompt": "截图到剪贴板后，随时可以 ⌘V 粘贴到聊天或文档中", "targetShortcutId": "screenshot-clipboard", "feedback": "掌握这招后，截图→粘贴一气呵成，桌面不再堆满临时截图" }
+              ]
+            }},
             "estimatedMinutes": 3,
             "order": 2
           }
@@ -190,9 +247,16 @@
             "id": "eff-ch1-l1",
             "chapterId": "eff-ch1",
             "titleZh": "Mission Control 与多桌面",
-            "contentType": "text",
-            "content": "## Mission Control\n\n**⌃↑** 打开 Mission Control，鸟瞰所有窗口和桌面空间。\n\n在 Mission Control 视图中：\n- 顶部是桌面空间列表，可以把窗口拖到不同桌面\n- 可以新建桌面（点击右上角 +）\n- 每个桌面可以放不同场景的应用（工作桌面 vs 娱乐桌面）\n\n### 关联手势\n\n- 三指/四指上滑 = Mission Control\n- 三指/四指左右滑 = 切换桌面",
+            "contentType": "interactive",
+            "content": "在模拟桌面中练习打开 Mission Control 鸟瞰所有窗口。",
             "shortcutIds": ["mission-control"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "desktop",
+              "steps": [
+                { "prompt": "按下 ⌃↑ 打开 Mission Control 鸟瞰所有窗口", "targetShortcutId": "mission-control", "feedback": "Mission Control 已打开！所有窗口缩小排列" },
+                { "prompt": "在 Mission Control 中可以看到所有桌面空间和窗口——再次按 ⌃↑ 或点按空白处退出", "targetShortcutId": "mission-control", "feedback": "再次触发！Mission Control 是窗口管理的核心" }
+              ]
+            }},
             "estimatedMinutes": 6,
             "order": 1
           },
@@ -200,9 +264,17 @@
             "id": "eff-ch1-l2",
             "chapterId": "eff-ch1",
             "titleZh": "分屏操作",
-            "contentType": "text",
-            "content": "## 分屏（Split View）\n\n将两个应用并排填满屏幕：\n\n1. 鼠标悬停在窗口左上角的绿色按钮\n2. 选择「将窗口拼贴到屏幕左侧」或「右侧」\n3. 另一侧点击要分屏的另一个应用\n\n### 隐藏与专注\n\n- **⌘H** = 隐藏当前应用\n- **⌥⌘H** = 隐藏其他所有应用（专注模式利器）\n- **⌃⌘F** = 进入/退出全屏",
+            "contentType": "interactive",
+            "content": "在模拟桌面中练习隐藏应用、隐藏其他应用和全屏切换。",
             "shortcutIds": ["hide-app", "hide-others", "fullscreen"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "desktop",
+              "steps": [
+                { "prompt": "按下 ⌘H 隐藏当前 Safari 窗口", "targetShortcutId": "hide-app", "feedback": "Safari 窗口已隐藏！" },
+                { "prompt": "按下 ⌥⌘H 只保留当前窗口", "targetShortcutId": "hide-others", "feedback": "其他应用已隐藏！专注模式开启" },
+                { "prompt": "按下 ⌃⌘F 进入全屏模式", "targetShortcutId": "fullscreen", "feedback": "已进入全屏模式！" }
+              ]
+            }},
             "estimatedMinutes": 6,
             "order": 2
           }
@@ -219,9 +291,18 @@
             "id": "eff-ch2-l1",
             "chapterId": "eff-ch2",
             "titleZh": "Option 键的文本魔法",
-            "contentType": "text",
-            "content": "## Option 键——文本编辑的加速器\n\n按住 ⌥ 键后，很多操作从「逐字母」变成「逐单词」：\n\n- **⌥←** / **⌥→** = 逐词移动光标\n- **⇧⌥←** / **⇧⌥→** = 逐词选择文本\n- **⌥⌫** = 逐词删除（向左删一个单词）\n\n这些快捷键在所有原生 Mac 应用的文本框中都能用，写邮件、填表、写代码都适用。",
+            "contentType": "interactive",
+            "content": "在文本编辑场景中练习逐词移动光标、逐词选择和逐词删除。",
             "shortcutIds": ["cursor-word-left", "cursor-word-right", "select-word", "delete-word"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "text-editor",
+              "steps": [
+                { "prompt": "按下 ⌥→ 逐词右移光标", "targetShortcutId": "cursor-word-right", "feedback": "光标已向右移动一个词！" },
+                { "prompt": "按下 ⌥← 逐词左移光标", "targetShortcutId": "cursor-word-left", "feedback": "光标已向左移动一个词！" },
+                { "prompt": "按住 ⇧⌥→ 逐词向右选择文本", "targetShortcutId": "select-word", "feedback": "已选择一个词！" },
+                { "prompt": "按下 ⌥⌫ 逐词删除前方的词", "targetShortcutId": "delete-word", "feedback": "已删除一个词！" }
+              ]
+            }},
             "estimatedMinutes": 6,
             "order": 1
           },
@@ -229,9 +310,20 @@
             "id": "eff-ch2-l2",
             "chapterId": "eff-ch2",
             "titleZh": "Emacs 风格快捷键",
-            "contentType": "text",
-            "content": "## macOS 隐藏的 Emacs 快捷键\n\nmacOS 在几乎所有文本框中内置了一组 Emacs 风格的快捷键，用 ⌃ 操作：\n\n- **⌃F** = 光标右移（Forward）\n- **⌃B** = 光标左移（Backward）\n- **⌃N** = 光标下移（Next line）\n- **⌃P** = 光标上移（Previous line）\n- **⌃A** = 跳到行首（像 ⌘← 一样，但手不用离开主键盘）\n- **⌃E** = 跳到行尾（End of line）\n\n### 为什么学它？\n\nEmacs 快捷键的键位在主键盘区（字母区），手指不需要移动到方向键。一旦养成习惯，打字和光标移动之间的切换几乎零成本。",
+            "contentType": "interactive",
+            "content": "在文本编辑场景中练习 Emacs 风格快捷键，手指不离开主键盘区。",
             "shortcutIds": ["control-b", "control-f", "control-n", "control-p", "control-a", "control-e"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "text-editor",
+              "steps": [
+                { "prompt": "按下 ⌃F 光标右移 (Forward)", "targetShortcutId": "control-f", "feedback": "光标右移！⌃F = Forward" },
+                { "prompt": "按下 ⌃B 光标左移 (Backward)", "targetShortcutId": "control-b", "feedback": "光标左移！⌃B = Backward" },
+                { "prompt": "按下 ⌃N 光标下移 (Next)", "targetShortcutId": "control-n", "feedback": "光标下移！⌃N = Next line" },
+                { "prompt": "按下 ⌃P 光标上移 (Previous)", "targetShortcutId": "control-p", "feedback": "光标上移！⌃P = Previous line" },
+                { "prompt": "按下 ⌃A 跳到行首", "targetShortcutId": "control-a", "feedback": "已跳到行首！" },
+                { "prompt": "按下 ⌃E 跳到行尾 (End)", "targetShortcutId": "control-e", "feedback": "已跳到行尾！⌃E = End of line" }
+              ]
+            }},
             "estimatedMinutes": 8,
             "order": 2
           },
@@ -259,9 +351,19 @@
             "id": "eff-ch3-l1",
             "chapterId": "eff-ch3",
             "titleZh": "快速预览与文件操作",
-            "contentType": "text",
-            "content": "## 访达中的重要快捷键\n\n### 快速预览（Quick Look）\n\n选中文件后按**空格键**，不用打开应用就能预览文件内容。支持图片、PDF、文档、视频等几乎所有格式。\n\n预览打开后按上下箭头可以在文件间切换。\n\n### 文件操作\n\n- **⌘⌫** = 移到废纸篓\n- **⌥⌘⌫** = 立即永久删除（不经过废纸篓）\n- **⌘D** = 制作副本\n- **⌘I** = 显示简介（查看文件信息）\n\n### 快速跳转\n\n- **⇧⌘G** = 前往文件夹（输入路径）\n- **⇧⌘H** = 前往个人文件夹\n- **⇧⌘A** = 前往应用程序文件夹\n- **⇧⌘D** = 前往桌面文件夹",
-            "shortcutIds": ["finder-preview", "finder-delete", "finder-delete-permanent", "finder-duplicate", "finder-info", "finder-go-folder", "finder-home", "finder-applications", "finder-desktop"],
+            "contentType": "interactive",
+            "content": "在模拟访达窗口中练习文件预览、删除、复制和查看简介。",
+            "shortcutIds": ["finder-preview", "finder-delete", "finder-duplicate", "finder-info", "finder-go-folder", "finder-home", "finder-applications", "finder-desktop"],
+            "interactive": { "type": "scenario", "config": {
+              "scenarioType": "finder",
+              "steps": [
+                { "prompt": "选中「西湖照片.png」后按下空格键快速预览", "targetShortcutId": "finder-preview", "feedback": "快速预览已打开！无需启动任何应用即可查看文件" },
+                { "prompt": "按下空格键或 Esc 关闭预览，再按 ⌘I 查看这个文件的详细信息", "targetShortcutId": "finder-info", "feedback": "文件简介面板已显示！可以查看大小、分辨率、创建时间" },
+                { "prompt": "按下 ⌘D 制作「会议记录.docx」的副本", "targetShortcutId": "finder-duplicate", "feedback": "副本已创建！文件名后自动添加「副本」" },
+                { "prompt": "按下 ⌘⌫ 将「项目方案.pdf」移到废纸篓", "targetShortcutId": "finder-delete", "feedback": "文件已移到废纸篓！随时可以从废纸篓恢复" },
+                { "prompt": "按下 ⇧⌘H 快速跳转到个人文件夹", "targetShortcutId": "finder-home", "feedback": "已跳转到个人文件夹！⇧⌘G 可以输入任意路径" }
+              ]
+            }},
             "estimatedMinutes": 10,
             "order": 1
           }

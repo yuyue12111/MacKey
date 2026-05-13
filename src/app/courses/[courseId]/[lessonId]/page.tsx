@@ -1,12 +1,13 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import coursesData from '../../../../../public/data/courses.json';
 import type { Course, Chapter, Lesson } from '@/types/course';
+import type { Shortcut } from '@/types/shortcut';
 import { getShortcutById } from '@/lib/shortcuts';
 import ShortcutCard from '@/components/shortcut/ShortcutCard';
+import LessonContent from '@/components/lesson/LessonContent';
+import MarkdownContent from '@/components/lesson/MarkdownContent';
 
 const courses = coursesData as Course[];
 
@@ -55,7 +56,8 @@ export default async function LessonPage({ params }: Props) {
   const { course, chapter, lesson, prevLesson, nextLesson } = result;
   const shortcutObjs = lesson.shortcutIds
     .map((id) => getShortcutById(id))
-    .filter(Boolean);
+    .filter(Boolean) as Shortcut[];
+  const isInteractive = lesson.contentType === 'interactive' || lesson.contentType === 'practice';
 
   return (
     <div className="max-w-[800px] mx-auto px-6 py-12">
@@ -79,58 +81,62 @@ export default async function LessonPage({ params }: Props) {
       </p>
 
       {/* ── Lesson Content ──────────── */}
-      <div className="prose prose-neutral max-w-none mb-12
-        prose-headings:font-[var(--font-display)] prose-headings:font-[350] prose-headings:tracking-[-0.01em]
-        prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-        prose-p:text-[15px] prose-p:leading-relaxed prose-p:text-ink-secondary prose-p:font-light prose-p:mb-5
-        prose-strong:text-ink prose-strong:font-medium
-        prose-code:font-mono prose-code:text-sm prose-code:bg-[#F5F3EF] prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none
-        prose-ul:text-ink-secondary prose-li:my-1
-        prose-table:bg-surface prose-table:border prose-table:border-border prose-table:rounded-2xl
-        prose-th:text-left prose-th:px-4 prose-th:py-3 prose-th:text-[12px] prose-th:font-medium prose-th:text-ink-tertiary
-        prose-td:px-4 prose-td:py-3 prose-td:text-[14px] prose-td:text-ink-secondary
-        prose-blockquote:border-l-gold prose-blockquote:bg-[#FFF8F0] prose-blockquote:py-3 prose-blockquote:px-5 prose-blockquote:rounded-r-xl prose-blockquote:not-italic prose-blockquote:text-[14px]
-      ">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {lesson.content}
-        </ReactMarkdown>
-      </div>
-
-      {/* ── Related Shortcuts ───────── */}
-      {shortcutObjs.length > 0 && (
+      {isInteractive ? (
         <div className="mb-12">
-          <h2 className="font-[var(--font-display)] text-lg font-[400] tracking-[-0.01em] mb-4">
-            本课涉及的快捷键
-          </h2>
-          <div className="space-y-3">
-            {shortcutObjs.map((s) => (
-              <ShortcutCard key={s!.id} shortcut={s!} showComparison />
-            ))}
-          </div>
+          <LessonContent
+            lesson={lesson}
+            shortcuts={shortcutObjs}
+            nextLessonUrl={nextLesson ? `/courses/${nextLesson.courseId}/${nextLesson.lessonId}` : null}
+          />
         </div>
+      ) : lesson.contentType === 'quiz' ? (
+        <div className="mb-12 bg-surface border border-border rounded-2xl p-12 text-center">
+          <p className="text-[15px] text-ink-secondary font-light">
+            测验功能即将推出。请先完成互动练习。
+          </p>
+        </div>
+      ) : (
+        <>
+          <MarkdownContent content={lesson.content} />
+
+          {shortcutObjs.length > 0 && (
+            <div className="mb-12">
+              <h2 className="font-[var(--font-display)] text-lg font-[400] tracking-[-0.01em] mb-4">
+                本课涉及的快捷键
+              </h2>
+              <div className="space-y-3">
+                {shortcutObjs.map((s) => (
+                  <ShortcutCard key={s.id} shortcut={s} showComparison />
+                ))}
+              </div>
+            </div>
+          )}
+        </>
       )}
 
       {/* ── Navigation ──────────────── */}
-      <div className="flex items-center justify-between pt-8 border-t border-border-light">
-        {prevLesson ? (
-          <Link
-            href={`/courses/${prevLesson.courseId}/${prevLesson.lessonId}`}
-            className="inline-flex items-center gap-1 text-sm text-ink-tertiary hover:text-gold-dim transition-colors no-underline"
-          >
-            <ChevronLeft size={16} strokeWidth={1.2} /> 上一课
-          </Link>
-        ) : (
-          <div />
-        )}
-        {nextLesson && (
-          <Link
-            href={`/courses/${nextLesson.courseId}/${nextLesson.lessonId}`}
-            className="inline-flex items-center gap-1 text-sm text-gold-dim hover:text-gold transition-colors no-underline font-medium"
-          >
-            下一课 <ChevronRight size={16} strokeWidth={1.2} />
-          </Link>
-        )}
-      </div>
+      {!isInteractive && (
+        <div className="flex items-center justify-between pt-8 border-t border-border-light">
+          {prevLesson ? (
+            <Link
+              href={`/courses/${prevLesson.courseId}/${prevLesson.lessonId}`}
+              className="inline-flex items-center gap-1 text-sm text-ink-tertiary hover:text-gold-dim transition-colors no-underline"
+            >
+              <ChevronLeft size={16} strokeWidth={1.2} /> 上一课
+            </Link>
+          ) : (
+            <div />
+          )}
+          {nextLesson && (
+            <Link
+              href={`/courses/${nextLesson.courseId}/${nextLesson.lessonId}`}
+              className="inline-flex items-center gap-1 text-sm text-gold-dim hover:text-gold transition-colors no-underline font-medium"
+            >
+              下一课 <ChevronRight size={16} strokeWidth={1.2} />
+            </Link>
+          )}
+        </div>
+      )}
     </div>
   );
 }

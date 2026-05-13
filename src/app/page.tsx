@@ -51,17 +51,16 @@ export default function Home() {
         </span>
 
         <h1 className="font-[var(--font-display)] text-5xl md:text-7xl font-[200] tracking-[-0.03em] leading-[1.1] mb-6 text-ink">
-          像呼吸一样
+          不用读，
           <br />
-          使用你的{' '}
           <span className="bg-gradient-to-br from-gold to-gold-dim bg-clip-text text-transparent">
-            Mac
+            直接练
           </span>
         </h1>
 
         <p className="text-[17px] md:text-lg text-ink-secondary max-w-[520px] mx-auto mb-10 font-[350] leading-relaxed">
-          从键盘到触控板，系统学习 macOS 的所有操作方式。
-          不再回到 Windows 的习惯，真正掌握 Mac 的优雅。
+          从键盘到触控板，在操作中掌握 macOS 的一切。
+          不再背快捷键，直接动手。
         </p>
 
         <div className="flex gap-3 justify-center flex-wrap">
@@ -69,13 +68,7 @@ export default function Home() {
             href="/courses"
             className="inline-flex items-center gap-1.5 bg-ink text-white px-7 py-3 rounded-full text-[15px] font-medium hover:bg-[#333] transition-colors no-underline"
           >
-            开始免费课程 <ArrowRight size={16} />
-          </Link>
-          <Link
-            href="/reference"
-            className="inline-flex items-center gap-1.5 bg-transparent text-ink-secondary border border-border px-7 py-3 rounded-full text-[15px] font-normal hover:border-gold hover:text-gold-dim transition-colors no-underline"
-          >
-            查看快捷键手册
+            开始上手 <ArrowRight size={16} />
           </Link>
         </div>
       </section>

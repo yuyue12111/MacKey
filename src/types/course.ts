@@ -1,6 +1,7 @@
 import type { Difficulty } from './shortcut';
 
 export type ContentType = 'text' | 'interactive' | 'practice' | 'quiz';
+export type ScenarioType = 'text-editor' | 'desktop' | 'finder' | 'screenshot';
 
 export interface CheckpointConfig {
   questionCount: number;
@@ -8,8 +9,14 @@ export interface CheckpointConfig {
   passThreshold: number;
 }
 
+export interface ScenarioStep {
+  prompt: string;
+  targetShortcutId: string;
+  feedback: string;
+}
+
 export interface InteractiveConfig {
-  type: 'key-press' | 'gesture-try' | 'speed-test';
+  type: 'key-press' | 'scenario' | 'gesture-try' | 'speed-test';
   config: Record<string, unknown>;
 }
 
