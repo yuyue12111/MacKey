@@ -429,28 +429,132 @@
     "id": "trackpad-guide",
     "slug": "trackpad-guide",
     "titleZh": "触控板完全指南",
-    "subtitleZh": "Mac 的触控板，远不止点击和滚动",
-    "descriptionZh": "从单指点击到四指切换桌面，用动画演示每个手势的运动轨迹。掌握 Mac 触控板隐藏的全部潜力。",
+    "subtitleZh": "把 15 个常用手势真正学会，而不是看过就忘",
+    "descriptionZh": "从单指点击到多桌面切换，这门课把 15 个触控板手势拆成可理解、可复习、可测验的学习路径。先看动画，再做判断，再及时纠错。",
     "targetAudience": "所有 MacBook 用户，想充分发挥触控板能力的人",
-    "estimatedMinutes": 30,
+    "estimatedMinutes": 48,
     "difficulty": "basic",
     "order": 3,
     "chapters": [
       {
         "id": "tpad-ch1",
         "courseId": "trackpad-guide",
-        "titleZh": "基础手势",
-        "descriptionZh": "单击、右键、滚动、缩放——触控板的基本操作",
+        "titleZh": "基础点击与滚动",
+        "descriptionZh": "先把最常用的基础动作练熟：点击、右键、垂直滚动和水平滚动",
         "order": 1,
         "lessons": [
           {
-            "id": "tpad-ch1-l1",
+            "id": "tpad-ch1-l2",
             "chapterId": "tpad-ch1",
-            "titleZh": "单指和双指操作",
-            "contentType": "text",
-            "content": "## 基础触控板手势\n\n### 单指操作\n- **单指轻点** = 点击\n- **单指按下** = 用力点按（Force Click，仅支持力度触控板的 Mac）\n\n### 双指操作\n- **双指轻点** = 辅助点按（右键）\n- **双指上下滑动** = 滚动页面\n- **双指左右滑动** = 水平滚动\n- **双指捏合** = 放大/缩小\n- **双指旋转** = 旋转图片/PDF\n\n### 自然滚动方向\n\nMac 默认使用「自然」滚动方向（手指上推，页面下滚——像在 iPhone 上一样）。如果你习惯 Windows 的反方向，可以在「系统设置 → 触控板 → 滚动与缩放」中关闭「自然滚动」。",
+            "titleZh": "先把最常用的 4 个动作练熟",
+            "contentType": "interactive",
+            "content": "这一课不再是认答案，而是直接在任务里做动作。你会先看到一个真实目标，再在右侧触控板区把对应手势做出来。",
             "shortcutIds": [],
-            "estimatedMinutes": 5,
+            "gestureIds": ["single-tap", "two-finger-tap", "two-finger-scroll", "two-finger-scroll-h"],
+            "interactive": {
+              "type": "gesture-scenario",
+              "config": {
+                "reviewTitleZh": "刚刚学会了什么",
+                "reviewContent": "## 这四个动作会陪你用完整台 Mac\n\n### 1. 单指轻点\n你刚刚用它打开了文章。它是最基础的点击动作，相当于鼠标左键，适合打开文件、点按钮、选中对象。\n\n### 2. 双指轻点\n你刚刚用它调出了上下文菜单。它相当于右键或辅助点按，最常用于查看更多操作，比如“复制 / 粘贴 / 重命名”。\n\n### 3. 双指上下滚动\n你刚刚用它继续往下读长文。这个动作适合滑动页面、文档或列表。Mac 默认是**自然滚动**：手指上推，内容像被你直接推动一样移动。\n\n### 4. 双指水平滚动\n你刚刚用它把宽表格横向挪过去。它适合宽表格、时间线和横向内容区；如果页面本身不支持横向内容，这个手势看起来会像“没反应”。\n\n> **Windows 用户提示**：最容易不习惯的是滚动方向，不是你的手势做错了，而是 Mac 的默认心智和 Windows 不一样。",
+                "steps": [
+                  {
+                    "id": "tpad-ch1-s1",
+                    "promptZh": "先把这篇文章点开。用最基础的点击动作进入详情页。",
+                    "sceneTitleZh": "浏览文章列表",
+                    "scenarioType": "browser",
+                    "gestureIds": ["single-tap"],
+                    "acceptedGesture": {
+                      "gestureId": "single-tap",
+                      "fingerCount": 1,
+                      "mode": "tap",
+                      "tapCount": 1
+                    },
+                    "successFeedbackZh": "文章已经打开了。你刚刚做的是单指轻点，这是触控板里最基础的点击动作。",
+                    "successVisualState": "page-opened",
+                    "followupCopyZh": "在 Mac 上，很多动作都从这个最基础的轻点开始。",
+                    "sceneDescriptionZh": "列表里有一篇你准备继续阅读的文章。",
+                    "errorHints": {
+                      "fingerCountZh": "这里只需要 1 指轻点，不需要双指。",
+                      "modeZh": "这是点击，不是滑动、捏合或深按。",
+                      "tapCountZh": "轻点一次就够了。"
+                    },
+                    "reviewGestureId": "single-tap"
+                  },
+                  {
+                    "id": "tpad-ch1-s2",
+                    "promptZh": "文章里的配图需要更多操作。调出上下文菜单，看看它能做什么。",
+                    "sceneTitleZh": "打开上下文菜单",
+                    "scenarioType": "browser",
+                    "gestureIds": ["two-finger-tap"],
+                    "acceptedGesture": {
+                      "gestureId": "two-finger-tap",
+                      "fingerCount": 2,
+                      "mode": "tap",
+                      "tapCount": 1
+                    },
+                    "successFeedbackZh": "右键菜单已经出现。你刚刚做的是双指轻点，它在 Mac 上最常见的用途就是辅助点按。",
+                    "successVisualState": "context-menu-open",
+                    "followupCopyZh": "以后遇到图片、文件、链接想看更多操作时，先想双指轻点。",
+                    "sceneDescriptionZh": "你想查看这张配图还能执行哪些附加操作。",
+                    "errorHints": {
+                      "fingerCountZh": "右键菜单通常用 2 指轻点，而不是单指点击。",
+                      "modeZh": "这里只需要点一下，不需要拖动。",
+                      "tapCountZh": "不是双击，轻点一次就行。"
+                    },
+                    "reviewGestureId": "two-finger-tap"
+                  },
+                  {
+                    "id": "tpad-ch1-s3",
+                    "promptZh": "继续往下读这篇长文，把页面滚到下面的内容。",
+                    "sceneTitleZh": "阅读长文",
+                    "scenarioType": "browser",
+                    "gestureIds": ["two-finger-scroll"],
+                    "acceptedGesture": {
+                      "gestureId": "two-finger-scroll",
+                      "fingerCount": 2,
+                      "mode": "drag",
+                      "direction": "up",
+                      "minDistance": 48
+                    },
+                    "successFeedbackZh": "页面已经向下推进。你刚刚用的是双指滚动，这是阅读网页和文档时最常用的动作。",
+                    "successVisualState": "page-scrolled",
+                    "followupCopyZh": "如果你刚从 Windows 转过来，先别纠结方向，先记住：在 Mac 上，像是在直接推动内容。",
+                    "sceneDescriptionZh": "这篇文章还很长，你需要继续往下看。",
+                    "errorHints": {
+                      "fingerCountZh": "滚动阅读通常是 2 指一起做。",
+                      "modeZh": "这里要滑动页面，不是点击。",
+                      "directionZh": "试着向上推动手势，让内容继续往下展开。"
+                    },
+                    "reviewGestureId": "two-finger-scroll"
+                  },
+                  {
+                    "id": "tpad-ch1-s4",
+                    "promptZh": "下方这张宽表格右边还有更多列，把视图横向挪过去看看。",
+                    "sceneTitleZh": "查看宽表格",
+                    "scenarioType": "browser",
+                    "gestureIds": ["two-finger-scroll-h"],
+                    "acceptedGesture": {
+                      "gestureId": "two-finger-scroll-h",
+                      "fingerCount": 2,
+                      "mode": "drag",
+                      "direction": "left",
+                      "minDistance": 48
+                    },
+                    "successFeedbackZh": "表格已经横向移动。你刚刚用的是双指水平滚动，这类动作最适合宽表格和时间线。",
+                    "successVisualState": "table-scrolled",
+                    "followupCopyZh": "它和浏览器前进/后退都像左右滑，但前者在“挪内容”，后者在“翻页面”。",
+                    "sceneDescriptionZh": "现在你要看表格右边被挡住的列。",
+                    "errorHints": {
+                      "fingerCountZh": "水平滚动也还是 2 指动作。",
+                      "modeZh": "这里不是点击，而是拖着内容左右移动。",
+                      "directionZh": "为了看到右边的内容，试着向左拖动。"
+                    },
+                    "reviewGestureId": "two-finger-scroll-h"
+                  }
+                ]
+              }
+            },
+            "estimatedMinutes": 6,
             "order": 1
           }
         ]
@@ -458,18 +562,124 @@
       {
         "id": "tpad-ch2",
         "courseId": "trackpad-guide",
-        "titleZh": "导航手势",
-        "descriptionZh": "多桌面切换、Mission Control、浏览器页面前进后退",
+        "titleZh": "缩放、旋转与浏览器导航",
+        "descriptionZh": "学会内容缩放、图片旋转，以及浏览器里最顺手的前进后退动作",
         "order": 2,
         "lessons": [
           {
-            "id": "tpad-ch2-l1",
+            "id": "tpad-ch2-l2",
             "chapterId": "tpad-ch2",
-            "titleZh": "三指和四指手势",
-            "contentType": "text",
-            "content": "## 多指手势\n\n### 三指手势\n- **三指上滑** = Mission Control\n- **三指下滑** = 应用 Exposé（显示当前应用所有窗口）\n- **三指左右滑** = 切换桌面空间\n\n### 四指手势\n- **四指上滑** = Mission Control（和三指相同）\n- **四指捏合** = Launchpad\n- **四指张开** = 显示桌面\n\n### 浏览器导航\n- **双指左右滑** = Safari/Chrome 中前进/后退一页\n- **双指从右侧滑入** = 通知中心",
+            "titleZh": "双指不只是滚动",
+            "contentType": "interactive",
+            "content": "这节课不考你认图，而是让你在预览和浏览器里直接把动作做出来。重点是分清：连续缩放和智能缩放不是一回事，翻页也不是横向滚动。",
             "shortcutIds": [],
-            "estimatedMinutes": 8,
+            "gestureIds": ["pinch-zoom", "two-finger-rotate", "smart-zoom", "two-finger-swipe-page"],
+            "interactive": {
+              "type": "gesture-scenario",
+              "config": {
+                "reviewTitleZh": "刚刚学会了什么",
+                "reviewContent": "## 双指手势还能做 4 件高频事情\n\n### 双指缩放\n你刚刚用双指张开把图片放大。它适合图片、网页和 PDF，重点在于**你自己连续控制比例**。\n\n### 双指旋转\n你刚刚用它把图片转正。它不像缩放那样高频，但在预览和图片场景里非常实用。\n\n### 智能缩放\n你刚刚用双指双击让正文直接跳到舒服的阅读比例。它不是连续变化，而是系统帮你“跳到一个合适位置”。\n\n### 浏览器前进 / 后退\n你刚刚直接回到了上一页。这个动作很容易和水平滚动混淆，关键区别是：**浏览器翻页是页面级导航，不是内容区平移**。",
+                "steps": [
+                  {
+                    "id": "tpad-ch2-s1",
+                    "promptZh": "这张图太小了，把它放大一点，方便你看清细节。",
+                    "sceneTitleZh": "放大预览图片",
+                    "scenarioType": "preview",
+                    "gestureIds": ["pinch-zoom"],
+                    "acceptedGesture": {
+                      "gestureId": "pinch-zoom",
+                      "fingerCount": 2,
+                      "mode": "pinch",
+                      "pinchKind": "out",
+                      "minDistance": 28
+                    },
+                    "successFeedbackZh": "图片已经放大。你刚刚做的是双指张开缩放，这是连续控制比例的动作。",
+                    "successVisualState": "zoom-image",
+                    "followupCopyZh": "只要是“我想自己一点点调大小”，优先想双指缩放。",
+                    "sceneDescriptionZh": "当前图片看不清细节，需要手动放大。",
+                    "errorHints": {
+                      "fingerCountZh": "缩放通常是 2 指同时完成。",
+                      "modeZh": "这里需要捏合/张开的动作，不是普通滑动。",
+                      "pinchKindZh": "试着从中间往外拖，表示把内容张开。",
+                      "fallbackZh": "动作幅度再明显一点，才能让缩放生效。"
+                    },
+                    "reviewGestureId": "pinch-zoom"
+                  },
+                  {
+                    "id": "tpad-ch2-s2",
+                    "promptZh": "这段正文太小了，但你不想慢慢调比例。让系统直接把它放到舒服的阅读大小。",
+                    "sceneTitleZh": "快速聚焦正文",
+                    "scenarioType": "browser",
+                    "gestureIds": ["smart-zoom"],
+                    "acceptedGesture": {
+                      "gestureId": "smart-zoom",
+                      "fingerCount": 2,
+                      "mode": "tap",
+                      "tapCount": 2
+                    },
+                    "successFeedbackZh": "正文已经被智能放大。你刚刚做的是双指双击智能缩放，它更像“跳到合适比例”，不是连续调大小。",
+                    "successVisualState": "smart-zoomed",
+                    "followupCopyZh": "遇到网页正文太小、但你又不想慢慢捏开时，就先想智能缩放。",
+                    "sceneDescriptionZh": "浏览器正文现在太小，想一口气调到舒服的阅读大小。",
+                    "errorHints": {
+                      "fingerCountZh": "智能缩放通常用 2 指完成。",
+                      "tapCountZh": "这里需要双击，而不是单击一次。",
+                      "modeZh": "这是快速点击，不是捏合。"
+                    },
+                    "reviewGestureId": "smart-zoom"
+                  },
+                  {
+                    "id": "tpad-ch2-s3",
+                    "promptZh": "这张图有点歪，把它转正一点。",
+                    "sceneTitleZh": "旋转预览图片",
+                    "scenarioType": "preview",
+                    "gestureIds": ["two-finger-rotate"],
+                    "acceptedGesture": {
+                      "gestureId": "two-finger-rotate",
+                      "fingerCount": 2,
+                      "mode": "rotate",
+                      "minDistance": 24
+                    },
+                    "successFeedbackZh": "图片已经旋转。你刚刚做的是双指旋转，这种动作最适合图片和 PDF 的方向调整。",
+                    "successVisualState": "rotate-image",
+                    "followupCopyZh": "和缩放一样它也常用双指，但轨迹不是靠近/远离，而是围绕中心转动。",
+                    "sceneDescriptionZh": "你正在预览一张方向没有摆正的图片。",
+                    "errorHints": {
+                      "fingerCountZh": "旋转通常也用 2 指。",
+                      "modeZh": "这里不是滑动或捏合，而是围绕中间转动。",
+                      "rotationZh": "试着围绕触控板中心做一个更明显的旋转。"
+                    },
+                    "reviewGestureId": "two-finger-rotate"
+                  },
+                  {
+                    "id": "tpad-ch2-s4",
+                    "promptZh": "你刚看完这篇文章，现在回到上一页的列表，而不是在当前页里横向挪内容。",
+                    "sceneTitleZh": "浏览器前进后退",
+                    "scenarioType": "browser",
+                    "gestureIds": ["two-finger-swipe-page"],
+                    "acceptedGesture": {
+                      "gestureId": "two-finger-swipe-page",
+                      "fingerCount": 2,
+                      "mode": "drag",
+                      "direction": "left",
+                      "minDistance": 48
+                    },
+                    "successFeedbackZh": "已经回到上一页。你刚刚做的是浏览器前进/后退手势，它解决的是页面导航，不是内容平移。",
+                    "successVisualState": "page-back",
+                    "followupCopyZh": "只要目标是“回上一页”，而不是“挪当前页里的内容”，就优先想这个手势。",
+                    "sceneDescriptionZh": "你刚从列表点进了一篇文章，现在准备回去。",
+                    "errorHints": {
+                      "fingerCountZh": "浏览器翻页通常还是 2 指操作。",
+                      "modeZh": "这里需要左右拖动，不是点击。",
+                      "directionZh": "现在要回到上一页，试着向左拖动。",
+                      "fallbackZh": "先想目标是翻页，不是平移内容区。"
+                    },
+                    "reviewGestureId": "two-finger-swipe-page"
+                  }
+                ]
+              }
+            },
+            "estimatedMinutes": 6,
             "order": 1
           }
         ]
@@ -477,18 +687,125 @@
       {
         "id": "tpad-ch3",
         "courseId": "trackpad-guide",
-        "titleZh": "高级手势",
-        "descriptionZh": "三指拖移、Force Click、自定义手势",
+        "titleZh": "多任务与桌面管理",
+        "descriptionZh": "把触控板变成窗口和桌面空间的控制器",
         "order": 3,
         "lessons": [
           {
-            "id": "tpad-ch3-l1",
+            "id": "tpad-ch3-l2",
             "chapterId": "tpad-ch3",
-            "titleZh": "三指拖移与 Force Click",
-            "contentType": "text",
-            "content": "## 三指拖移\n\n三指拖移是移动窗口、选择文本的高效方式：\n\n1. 打开「系统设置 → 辅助功能 → 指针控制 → 触控板选项」\n2. 启用「使用触控板进行拖移」\n3. 选择「三指拖移」\n\n之后用三指在触控板上滑动就可以拖移窗口、选择文本，不需要按住触控板。\n\n## Force Click（力度触控）\n\n支持力度触控的 Mac 触控板：\n- **用力按一个词** = 查字典/维基百科\n- **用力按一个链接** = 预览网页\n- **用力按一个文件** = Quick Look 预览\n- **用力按一个地址** = 在地图中预览",
+            "titleZh": "看清所有窗口，再切到想去的空间",
+            "contentType": "interactive",
+            "content": "这一课的重点不是记方向，而是先判断你到底在解决什么问题：是看所有窗口、只看当前应用窗口，还是去另一个空间继续做事。",
             "shortcutIds": [],
-            "estimatedMinutes": 5,
+            "gestureIds": ["three-finger-mission-control", "three-finger-app-expose", "three-finger-switch-desktop", "two-finger-notification"],
+            "interactive": {
+              "type": "gesture-scenario",
+              "config": {
+                "reviewTitleZh": "刚刚学会了什么",
+                "reviewContent": "## 当窗口越来越多时，触控板才真正开始发力\n\n### 三指上滑 · Mission Control\n你刚刚用它把所有窗口和桌面空间一起摊开。它最适合“我知道窗口开着，但找不到它在哪儿”的时刻。\n\n### 三指下滑 · 应用 Exposé\n你刚刚用它只看当前应用的所有窗口。它适合同一个应用开了很多文档、很多 Finder 窗口的时候。\n\n### 三指左右滑 · 切换桌面空间\n你刚刚用它切到了另一个工作空间。它最适合已经把工作流拆到不同空间的人。\n\n### 双指从右滑入 · 通知中心\n你刚刚从右边缘把通知中心拉了出来。关键不是单纯左滑，而是**从右侧边缘开始**。",
+                "steps": [
+                  {
+                    "id": "tpad-ch3-s1",
+                    "promptZh": "桌面一下开了太多窗口，先把所有窗口和桌面空间都摊开，重新看清全局。",
+                    "sceneTitleZh": "鸟瞰所有窗口",
+                    "scenarioType": "desktop",
+                    "gestureIds": ["three-finger-mission-control"],
+                    "acceptedGesture": {
+                      "gestureId": "three-finger-mission-control",
+                      "fingerCount": 3,
+                      "mode": "drag",
+                      "direction": "up",
+                      "minDistance": 52
+                    },
+                    "successFeedbackZh": "Mission Control 已经打开。你刚刚做的是三指上滑，它最适合先把全局看清楚。",
+                    "successVisualState": "mission-control",
+                    "followupCopyZh": "只要你感觉“窗口太乱，我先看看全局”，就先想 Mission Control。",
+                    "sceneDescriptionZh": "桌面上同时开着多个窗口和空间，你需要一个全局视角。",
+                    "errorHints": {
+                      "fingerCountZh": "这里需要 3 指一起向上做动作。",
+                      "modeZh": "这一步不是点击，而是明显的上滑。",
+                      "directionZh": "Mission Control 是向上，不是向左或向下。 "
+                    },
+                    "reviewGestureId": "three-finger-mission-control"
+                  },
+                  {
+                    "id": "tpad-ch3-s2",
+                    "promptZh": "现在你只想看 Safari 自己的窗口，不想把别的应用也一起摊开。",
+                    "sceneTitleZh": "只看当前应用窗口",
+                    "scenarioType": "desktop",
+                    "gestureIds": ["three-finger-app-expose"],
+                    "acceptedGesture": {
+                      "gestureId": "three-finger-app-expose",
+                      "fingerCount": 3,
+                      "mode": "drag",
+                      "direction": "down",
+                      "minDistance": 52
+                    },
+                    "successFeedbackZh": "当前应用的所有窗口已经展开。你刚刚做的是应用 Exposé，它只关心当前应用，不看全局。",
+                    "successVisualState": "app-expose",
+                    "followupCopyZh": "以后在一个应用里开了很多文档窗口，优先想这个动作，不要先开 Mission Control。",
+                    "sceneDescriptionZh": "你正在同一个应用里处理多个窗口，只想在它们之间挑一个。",
+                    "errorHints": {
+                      "fingerCountZh": "这个动作也是 3 指，但不是左右滑。",
+                      "modeZh": "这里只需要明显下滑，不是点击。",
+                      "directionZh": "应用 Exposé 试着向下做，而 Mission Control 才是向上。"
+                    },
+                    "reviewGestureId": "three-finger-app-expose"
+                  },
+                  {
+                    "id": "tpad-ch3-s3",
+                    "promptZh": "写作、聊天和参考资料分布在不同桌面空间里。切到下一个工作空间继续做事。",
+                    "sceneTitleZh": "切换桌面空间",
+                    "scenarioType": "desktop",
+                    "gestureIds": ["three-finger-switch-desktop"],
+                    "acceptedGesture": {
+                      "gestureId": "three-finger-switch-desktop",
+                      "fingerCount": 3,
+                      "mode": "drag",
+                      "direction": "left",
+                      "minDistance": 52
+                    },
+                    "successFeedbackZh": "你已经切到另一个桌面空间。这个动作解决的是“去别的工作区”，不是“看当前空间里有什么”。",
+                    "successVisualState": "switch-desktop",
+                    "followupCopyZh": "只要你已经在用多桌面，把不同任务拆开后，这个手势会非常高频。",
+                    "sceneDescriptionZh": "当前桌面不是你要继续工作的那个空间。",
+                    "errorHints": {
+                      "fingerCountZh": "切换桌面通常是 3 指左右滑。",
+                      "modeZh": "这里需要滑动切换，不是点击。",
+                      "directionZh": "现在要去左边的下一个空间，试着向左滑。"
+                    },
+                    "reviewGestureId": "three-finger-switch-desktop"
+                  },
+                  {
+                    "id": "tpad-ch3-s4",
+                    "promptZh": "你想快速看今天的提醒和通知。不要离开当前任务，从右边把通知中心拉出来。",
+                    "sceneTitleZh": "查看通知中心",
+                    "scenarioType": "browser",
+                    "gestureIds": ["two-finger-notification"],
+                    "acceptedGesture": {
+                      "gestureId": "two-finger-notification",
+                      "fingerCount": 2,
+                      "mode": "drag",
+                      "direction": "left",
+                      "edge": "right",
+                      "minDistance": 44
+                    },
+                    "successFeedbackZh": "通知中心已经滑出来了。这个动作的关键不是“左滑”，而是“从右边缘向里滑”。",
+                    "successVisualState": "notification-open",
+                    "followupCopyZh": "如果你只是普通双指左右滑，多半只会触发内容导航，不会打开通知中心。",
+                    "sceneDescriptionZh": "你想临时看一眼通知，不想跳离当前页面。",
+                    "errorHints": {
+                      "fingerCountZh": "通知中心通常是 2 指动作。",
+                      "edgeZh": "要从触控板右侧边缘开始，不是从中间开始。",
+                      "directionZh": "从右往里拉，方向上会表现为向左拖动。"
+                    },
+                    "reviewGestureId": "two-finger-notification"
+                  }
+                ]
+              }
+            },
+            "estimatedMinutes": 7,
             "order": 1
           }
         ]
@@ -496,24 +813,470 @@
       {
         "id": "tpad-ch4",
         "courseId": "trackpad-guide",
-        "titleZh": "手势综合测验",
-        "descriptionZh": "测验手势知识",
+        "titleZh": "高级能力与系统视角",
+        "descriptionZh": "Launchpad、显示桌面和 Force Click 这些“看起来不常用，但一旦会了就很顺手”的动作",
         "order": 4,
         "lessons": [
           {
-            "id": "tpad-ch4-l1",
+            "id": "tpad-ch4-l2",
             "chapterId": "tpad-ch4",
-            "titleZh": "触控板手势测验",
-            "contentType": "quiz",
-            "content": "完成测验检验你对触控板手势的掌握程度",
+            "titleZh": "把触控板当成系统入口",
+            "contentType": "interactive",
+            "content": "这一组动作不一定是你每天用得最多的，但一旦用上，通常都能立刻节省很多操作路径。",
             "shortcutIds": [],
-            "checkpoint": {
-              "questionCount": 8,
-              "shortcutPool": [],
-              "passThreshold": 80
+            "gestureIds": ["four-finger-pinch-launchpad", "four-finger-spread-desktop", "force-click"],
+            "interactive": {
+              "type": "gesture-scenario",
+              "config": {
+                "reviewTitleZh": "刚刚学会了什么",
+                "reviewContent": "## 这几种动作不一定最常用，但很能体现 Mac 触控板的风格\n\n### 四指捏合 · Launchpad\n你刚刚用它把所有应用一次性摊开。它适合“我知道这个 App 装了，但名字一下想不起来”的时候。\n\n### 四指张开 · 显示桌面\n你刚刚把窗口推开，直接露出了桌面。它很适合桌面上有临时文件、截图或下载内容时使用。\n\n### Force Click\n你刚刚做的不是长按，而是**更深一层的点击**。它常见于查字典、预览链接、预览文件、查看地址。\n\n> **设备差异提醒**：Force Click 依赖力度触控硬件；如果你的设备不支持，它不会有同样的反馈体验。",
+                "steps": [
+                  {
+                    "id": "tpad-ch4-s1",
+                    "promptZh": "你知道应用已经装了，但不想搜索名字。把所有应用先一次性摊出来。",
+                    "sceneTitleZh": "打开 Launchpad",
+                    "scenarioType": "desktop",
+                    "gestureIds": ["four-finger-pinch-launchpad"],
+                    "acceptedGesture": {
+                      "gestureId": "four-finger-pinch-launchpad",
+                      "fingerCount": 4,
+                      "mode": "pinch",
+                      "pinchKind": "in",
+                      "minDistance": 28
+                    },
+                    "successFeedbackZh": "Launchpad 已经打开。四指向内捏合更像是“把所有应用收拢到你面前”。",
+                    "successVisualState": "launchpad-open",
+                    "followupCopyZh": "当你只记得图标、不想在 Spotlight 里搜名字时，这个动作很顺手。",
+                    "sceneDescriptionZh": "你想快速查看这台 Mac 上都有哪些应用。",
+                    "errorHints": {
+                      "fingerCountZh": "Launchpad 这里需要 4 指，而不是 2 指缩放。",
+                      "modeZh": "这里是捏合动作，不是点击或普通滑动。",
+                      "pinchKindZh": "试着从外往里收拢，而不是向外张开。"
+                    },
+                    "reviewGestureId": "four-finger-pinch-launchpad"
+                  },
+                  {
+                    "id": "tpad-ch4-s2",
+                    "promptZh": "刚下载的文件就在桌面上，但窗口挡住了。把桌面本身露出来。",
+                    "sceneTitleZh": "显示桌面",
+                    "scenarioType": "desktop",
+                    "gestureIds": ["four-finger-spread-desktop"],
+                    "acceptedGesture": {
+                      "gestureId": "four-finger-spread-desktop",
+                      "fingerCount": 4,
+                      "mode": "pinch",
+                      "pinchKind": "out",
+                      "minDistance": 28
+                    },
+                    "successFeedbackZh": "桌面已经露出来了。这个动作的本质是把窗口推开，而不是切换空间。",
+                    "successVisualState": "show-desktop",
+                    "followupCopyZh": "看到临时截图、下载文件或桌面便签时，这个动作会比慢慢找窗口缝隙快得多。",
+                    "sceneDescriptionZh": "文件就在桌面，但当前窗口把它们都挡住了。",
+                    "errorHints": {
+                      "fingerCountZh": "显示桌面也要 4 指完成。",
+                      "modeZh": "这里需要四指张开的手势，不是左右滑。",
+                      "pinchKindZh": "试着从中间往外张开，而不是向内收。"
+                    },
+                    "reviewGestureId": "four-finger-spread-desktop"
+                  },
+                  {
+                    "id": "tpad-ch4-s3",
+                    "promptZh": "看到一个陌生词，不要立刻跳网页，先直接在当前上下文里看更深一层的信息。",
+                    "sceneTitleZh": "Force Click 预览",
+                    "scenarioType": "system",
+                    "gestureIds": ["force-click"],
+                    "acceptedGesture": {
+                      "gestureId": "force-click",
+                      "fingerCount": 1,
+                      "mode": "press"
+                    },
+                    "successFeedbackZh": "预览信息已经弹出来了。你刚刚做的是 Force Click，它像是“更深一层的点击”。",
+                    "successVisualState": "force-preview",
+                    "followupCopyZh": "查词、预览链接、Quick Look 这些场景里，它都能省掉一层跳转。",
+                    "sceneDescriptionZh": "你正在阅读一段内容，想不离开当前页先看定义或预览。",
+                    "errorHints": {
+                      "fingerCountZh": "Force Click 通常是一指完成。",
+                      "modeZh": "这里不是普通点按，而是切到“深按”后再点击。"
+                    },
+                    "reviewGestureId": "force-click"
+                  }
+                ]
+              }
             },
             "estimatedMinutes": 5,
             "order": 1
+          }
+        ]
+      },
+      {
+        "id": "tpad-ch5",
+        "courseId": "trackpad-guide",
+        "titleZh": "综合练习与测验",
+        "descriptionZh": "把 15 个手势放在一起识别，建立更稳定的判断能力",
+        "order": 5,
+        "lessons": [
+          {
+            "id": "tpad-ch5-l1",
+            "chapterId": "tpad-ch5",
+            "titleZh": "综合场景练习",
+            "contentType": "interactive",
+            "content": "这节会把前面学过的手势混进真实任务里。目标不是背名字，而是遇到任务时脑子里自然浮现出该做什么动作。",
+            "shortcutIds": [],
+            "gestureIds": [
+              "single-tap",
+              "two-finger-tap",
+              "two-finger-scroll",
+              "two-finger-scroll-h",
+              "pinch-zoom",
+              "two-finger-rotate",
+              "smart-zoom",
+              "three-finger-mission-control",
+              "three-finger-app-expose",
+              "three-finger-switch-desktop",
+              "two-finger-swipe-page",
+              "four-finger-pinch-launchpad",
+              "four-finger-spread-desktop",
+              "two-finger-notification",
+              "force-click"
+            ],
+            "interactive": {
+              "type": "gesture-scenario",
+              "config": {
+                "steps": [
+                  {
+                    "id": "tpad-ch5-s1",
+                    "promptZh": "你看完文章了，先回到上一页的列表。",
+                    "sceneTitleZh": "练习页面导航",
+                    "scenarioType": "browser",
+                    "gestureIds": ["two-finger-swipe-page"],
+                    "acceptedGesture": {
+                      "gestureId": "two-finger-swipe-page",
+                      "fingerCount": 2,
+                      "mode": "drag",
+                      "direction": "left",
+                      "minDistance": 48
+                    },
+                    "successFeedbackZh": "已经回到上一页。你没有去找按钮，而是直接用了浏览器自己的导航手势。",
+                    "successVisualState": "page-back",
+                    "followupCopyZh": "以后只要目标是页面导航，就别把它和水平滚动混在一起。",
+                    "sceneDescriptionZh": "文章看完了，你要退回列表。",
+                    "errorHints": {
+                      "fingerCountZh": "浏览器翻页通常是 2 指动作。",
+                      "modeZh": "这里需要左右拖动，不是点击。",
+                      "directionZh": "回上一页时，试着向左滑。"
+                    },
+                    "reviewGestureId": "two-finger-swipe-page"
+                  },
+                  {
+                    "id": "tpad-ch5-s2",
+                    "promptZh": "这张横过来的图片看着很别扭，把它转正。",
+                    "sceneTitleZh": "练习图片旋转",
+                    "scenarioType": "preview",
+                    "gestureIds": ["two-finger-rotate"],
+                    "acceptedGesture": {
+                      "gestureId": "two-finger-rotate",
+                      "fingerCount": 2,
+                      "mode": "rotate",
+                      "minDistance": 24
+                    },
+                    "successFeedbackZh": "图片已经转正。旋转和缩放都常用双指，但它们解决的是完全不同的问题。",
+                    "successVisualState": "rotate-image",
+                    "followupCopyZh": "当目标是“改方向”，而不是“改大小”，就先想旋转。",
+                    "sceneDescriptionZh": "你正在预览一张横过来的图片。",
+                    "errorHints": {
+                      "fingerCountZh": "旋转时通常还是 2 指。",
+                      "modeZh": "这里需要旋转动作，不是左右滑。",
+                      "rotationZh": "试着围绕中间做一圈更明显的旋转。"
+                    },
+                    "reviewGestureId": "two-finger-rotate"
+                  },
+                  {
+                    "id": "tpad-ch5-s3",
+                    "promptZh": "这个应用里同时开了很多窗口，但你只想看它自己的那些窗口。",
+                    "sceneTitleZh": "练习应用 Exposé",
+                    "scenarioType": "desktop",
+                    "gestureIds": ["three-finger-app-expose"],
+                    "acceptedGesture": {
+                      "gestureId": "three-finger-app-expose",
+                      "fingerCount": 3,
+                      "mode": "drag",
+                      "direction": "down",
+                      "minDistance": 52
+                    },
+                    "successFeedbackZh": "当前应用的窗口已经单独展开。你刚刚用的是应用 Exposé，而不是全局窗口总览。",
+                    "successVisualState": "app-expose",
+                    "followupCopyZh": "只看一个应用时，用它会比 Mission Control 更聚焦。",
+                    "sceneDescriptionZh": "你在同一个应用里开了多个文档窗口。",
+                    "errorHints": {
+                      "fingerCountZh": "这里需要 3 指动作。",
+                      "modeZh": "这一步是下滑，不是点击。",
+                      "directionZh": "应用 Exposé 向下做，Mission Control 才是向上。"
+                    },
+                    "reviewGestureId": "three-finger-app-expose"
+                  },
+                  {
+                    "id": "tpad-ch5-s4",
+                    "promptZh": "你想临时查看提醒和通知，但不想打断当前阅读，把通知中心拉出来。",
+                    "sceneTitleZh": "练习边缘手势",
+                    "scenarioType": "browser",
+                    "gestureIds": ["two-finger-notification"],
+                    "acceptedGesture": {
+                      "gestureId": "two-finger-notification",
+                      "fingerCount": 2,
+                      "mode": "drag",
+                      "direction": "left",
+                      "edge": "right",
+                      "minDistance": 44
+                    },
+                    "successFeedbackZh": "通知中心已经打开。边缘手势的关键是起点，不是单纯左右滑。",
+                    "successVisualState": "notification-open",
+                    "followupCopyZh": "以后遇到通知中心，先想“从右边缘往里拉”。",
+                    "sceneDescriptionZh": "你还想留在当前页面里，只是暂时看一眼通知。",
+                    "errorHints": {
+                      "fingerCountZh": "通知中心通常是 2 指操作。",
+                      "edgeZh": "要从右侧边缘开始，别从中间起手。",
+                      "directionZh": "从右边缘向里拉，动作上会表现为向左拖动。"
+                    },
+                    "reviewGestureId": "two-finger-notification"
+                  },
+                  {
+                    "id": "tpad-ch5-s5",
+                    "promptZh": "正文太小，但你不想手动慢慢调比例。让系统直接帮你放到舒服的阅读大小。",
+                    "sceneTitleZh": "练习智能缩放",
+                    "scenarioType": "browser",
+                    "gestureIds": ["smart-zoom"],
+                    "acceptedGesture": {
+                      "gestureId": "smart-zoom",
+                      "fingerCount": 2,
+                      "mode": "tap",
+                      "tapCount": 2
+                    },
+                    "successFeedbackZh": "正文已经快速放大。智能缩放更像“跳到合适比例”，不是连续调大小。",
+                    "successVisualState": "smart-zoomed",
+                    "followupCopyZh": "如果你只是想快速进入可读状态，它会比双指缩放更省力。",
+                    "sceneDescriptionZh": "你正在读一篇字号偏小的长文。",
+                    "errorHints": {
+                      "fingerCountZh": "智能缩放这里需要 2 指。",
+                      "tapCountZh": "这里是双击，不是单击一次。",
+                      "modeZh": "不需要捏合，切到轻点后双击。"
+                    },
+                    "reviewGestureId": "smart-zoom"
+                  },
+                  {
+                    "id": "tpad-ch5-s6",
+                    "promptZh": "你确认文件就在桌面上，但被窗口挡住了。直接把桌面露出来。",
+                    "sceneTitleZh": "练习显示桌面",
+                    "scenarioType": "desktop",
+                    "gestureIds": ["four-finger-spread-desktop"],
+                    "acceptedGesture": {
+                      "gestureId": "four-finger-spread-desktop",
+                      "fingerCount": 4,
+                      "mode": "pinch",
+                      "pinchKind": "out",
+                      "minDistance": 28
+                    },
+                    "successFeedbackZh": "桌面已经露出来了。你做的是四指张开，不是切换空间，也不是 Launchpad。",
+                    "successVisualState": "show-desktop",
+                    "followupCopyZh": "只要目标是“看桌面”，这个动作往往比一个个最小化窗口更直接。",
+                    "sceneDescriptionZh": "下载的文件就在桌面，但当前窗口挡住了视线。",
+                    "errorHints": {
+                      "fingerCountZh": "显示桌面需要 4 指。",
+                      "modeZh": "这里是张开动作，不是滑动或点击。",
+                      "pinchKindZh": "从中间往外张开，而不是向内收拢。"
+                    },
+                    "reviewGestureId": "four-finger-spread-desktop"
+                  }
+                ]
+              }
+            },
+            "estimatedMinutes": 8,
+            "order": 1
+          },
+          {
+            "id": "tpad-ch5-l2",
+            "chapterId": "tpad-ch5",
+            "titleZh": "触控板场景测验",
+            "contentType": "quiz",
+            "content": "最后这轮测验不再让你选答案，而是让你在任务里直接把动作做出来。做错了会立刻告诉你错在哪，再给你一次机会复习。",
+            "shortcutIds": [],
+            "gestureIds": [
+              "single-tap",
+              "two-finger-tap",
+              "two-finger-scroll",
+              "two-finger-scroll-h",
+              "pinch-zoom",
+              "two-finger-rotate",
+              "smart-zoom",
+              "three-finger-mission-control",
+              "three-finger-app-expose",
+              "three-finger-switch-desktop",
+              "two-finger-swipe-page",
+              "four-finger-pinch-launchpad",
+              "four-finger-spread-desktop",
+              "two-finger-notification",
+              "force-click"
+            ],
+            "checkpoint": {
+              "questionCount": 6,
+              "mode": "gestures",
+              "gestureIds": [
+                "single-tap",
+                "two-finger-tap",
+                "two-finger-scroll",
+                "two-finger-scroll-h",
+                "pinch-zoom",
+                "two-finger-rotate",
+                "smart-zoom",
+                "three-finger-mission-control",
+                "three-finger-app-expose",
+                "three-finger-switch-desktop",
+                "two-finger-swipe-page",
+                "four-finger-pinch-launchpad",
+                "four-finger-spread-desktop",
+                "two-finger-notification",
+                "force-click"
+              ],
+              "scenarioSteps": [
+                {
+                  "id": "tpad-quiz-s1",
+                  "promptZh": "现在窗口太乱了，先把所有窗口和桌面空间一起摊开。",
+                  "sceneTitleZh": "测验：窗口总览",
+                  "scenarioType": "desktop",
+                  "gestureIds": ["three-finger-mission-control"],
+                  "acceptedGesture": {
+                    "gestureId": "three-finger-mission-control",
+                    "fingerCount": 3,
+                    "mode": "drag",
+                    "direction": "up",
+                    "minDistance": 52
+                  },
+                  "successFeedbackZh": "Mission Control 已打开。",
+                  "successVisualState": "mission-control",
+                  "followupCopyZh": "这是全局鸟瞰，不是只看当前应用的窗口。",
+                  "errorHints": {
+                    "fingerCountZh": "这一步需要 3 指。",
+                    "directionZh": "Mission Control 试着向上滑。",
+                    "modeZh": "这里是滑动，不是点击。"
+                  },
+                  "reviewGestureId": "three-finger-mission-control"
+                },
+                {
+                  "id": "tpad-quiz-s2",
+                  "promptZh": "桌面上这个文件需要更多操作，把右键菜单调出来。",
+                  "sceneTitleZh": "测验：上下文菜单",
+                  "scenarioType": "browser",
+                  "gestureIds": ["two-finger-tap"],
+                  "acceptedGesture": {
+                    "gestureId": "two-finger-tap",
+                    "fingerCount": 2,
+                    "mode": "tap",
+                    "tapCount": 1
+                  },
+                  "successFeedbackZh": "上下文菜单已经打开。",
+                  "successVisualState": "context-menu-open",
+                  "followupCopyZh": "双指轻点解决的是“查看更多操作”，不是预览。",
+                  "errorHints": {
+                    "fingerCountZh": "右键菜单通常是 2 指轻点。",
+                    "tapCountZh": "轻点一次就够了。",
+                    "modeZh": "这里不用拖动。"
+                  },
+                  "reviewGestureId": "two-finger-tap"
+                },
+                {
+                  "id": "tpad-quiz-s3",
+                  "promptZh": "你知道应用已经装了，但不想搜索，直接把所有应用摊出来。",
+                  "sceneTitleZh": "测验：打开 Launchpad",
+                  "scenarioType": "desktop",
+                  "gestureIds": ["four-finger-pinch-launchpad"],
+                  "acceptedGesture": {
+                    "gestureId": "four-finger-pinch-launchpad",
+                    "fingerCount": 4,
+                    "mode": "pinch",
+                    "pinchKind": "in",
+                    "minDistance": 28
+                  },
+                  "successFeedbackZh": "Launchpad 已经打开。",
+                  "successVisualState": "launchpad-open",
+                  "followupCopyZh": "这是四指向内收，不是四指张开露出桌面。",
+                  "errorHints": {
+                    "fingerCountZh": "Launchpad 要 4 指完成。",
+                    "pinchKindZh": "要向内收拢，不是向外张开。",
+                    "modeZh": "这里需要捏合，不是左右滑。"
+                  },
+                  "reviewGestureId": "four-finger-pinch-launchpad"
+                },
+                {
+                  "id": "tpad-quiz-s4",
+                  "promptZh": "看到一个陌生词，先在当前页面直接查看更深一层的解释。",
+                  "sceneTitleZh": "测验：Force Click",
+                  "scenarioType": "system",
+                  "gestureIds": ["force-click"],
+                  "acceptedGesture": {
+                    "gestureId": "force-click",
+                    "fingerCount": 1,
+                    "mode": "press"
+                  },
+                  "successFeedbackZh": "预览信息已经出现。",
+                  "successVisualState": "force-preview",
+                  "followupCopyZh": "Force Click 更像“更深一层的点击”，不是右键，也不是普通单击。",
+                  "errorHints": {
+                    "fingerCountZh": "这里是一指深按。",
+                    "modeZh": "请切到“深按”后点击，不是普通轻点。"
+                  },
+                  "reviewGestureId": "force-click"
+                },
+                {
+                  "id": "tpad-quiz-s5",
+                  "promptZh": "图片细节不够清楚，自己把它一点点放大，而不是让系统自动跳比例。",
+                  "sceneTitleZh": "测验：连续缩放",
+                  "scenarioType": "preview",
+                  "gestureIds": ["pinch-zoom"],
+                  "acceptedGesture": {
+                    "gestureId": "pinch-zoom",
+                    "fingerCount": 2,
+                    "mode": "pinch",
+                    "pinchKind": "out",
+                    "minDistance": 28
+                  },
+                  "successFeedbackZh": "图片已经被连续放大。",
+                  "successVisualState": "zoom-image",
+                  "followupCopyZh": "你刚刚做的是自己控制比例的缩放，不是智能缩放。",
+                  "errorHints": {
+                    "fingerCountZh": "缩放这里需要 2 指。",
+                    "pinchKindZh": "试着向外张开，而不是向内收拢。",
+                    "modeZh": "这里是捏合/张开，不是点击。"
+                  },
+                  "reviewGestureId": "pinch-zoom"
+                },
+                {
+                  "id": "tpad-quiz-s6",
+                  "promptZh": "你已经把工作内容拆到多个空间了，现在切到另一个桌面继续处理下一件事。",
+                  "sceneTitleZh": "测验：切换桌面",
+                  "scenarioType": "desktop",
+                  "gestureIds": ["three-finger-switch-desktop"],
+                  "acceptedGesture": {
+                    "gestureId": "three-finger-switch-desktop",
+                    "fingerCount": 3,
+                    "mode": "drag",
+                    "direction": "left",
+                    "minDistance": 52
+                  },
+                  "successFeedbackZh": "你已经切到另一个桌面空间。",
+                  "successVisualState": "switch-desktop",
+                  "followupCopyZh": "这是“去别的空间”，不是“看清当前空间”。",
+                  "errorHints": {
+                    "fingerCountZh": "切换桌面一般是 3 指完成。",
+                    "directionZh": "现在目标空间在左边，试着向左滑。",
+                    "modeZh": "这里需要拖动切换，不是点击。"
+                  },
+                  "reviewGestureId": "three-finger-switch-desktop"
+                }
+              ],
+              "shortcutPool": [],
+              "passThreshold": 80
+            },
+            "estimatedMinutes": 7,
+            "order": 2
           }
         ]
       }

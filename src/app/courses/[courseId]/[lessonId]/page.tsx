@@ -4,10 +4,13 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import coursesData from '../../../../../public/data/courses.json';
 import type { Course, Chapter, Lesson } from '@/types/course';
 import type { Shortcut } from '@/types/shortcut';
+import type { TrackpadGesture } from '@/types/gesture';
 import { getShortcutById } from '@/lib/shortcuts';
+import { getGestureById } from '@/lib/gestures';
 import ShortcutCard from '@/components/shortcut/ShortcutCard';
 import LessonContent from '@/components/lesson/LessonContent';
 import MarkdownContent from '@/components/lesson/MarkdownContent';
+import GestureReferenceCard from '@/components/gesture/GestureReferenceCard';
 
 const courses = coursesData as Course[];
 
@@ -54,10 +57,17 @@ export default async function LessonPage({ params }: Props) {
   if (!result) notFound();
 
   const { course, chapter, lesson, prevLesson, nextLesson } = result;
+  const currentLessonUrl = `/courses/${course.slug}/${lesson.id}`;
   const shortcutObjs = lesson.shortcutIds
     .map((id) => getShortcutById(id))
     .filter(Boolean) as Shortcut[];
-  const isInteractive = lesson.contentType === 'interactive' || lesson.contentType === 'practice';
+  const gestureObjs = (lesson.gestureIds ?? [])
+    .map((id) => getGestureById(id))
+    .filter(Boolean) as TrackpadGesture[];
+  const usesLessonContent =
+    lesson.contentType === 'interactive' ||
+    lesson.contentType === 'practice' ||
+    lesson.contentType === 'quiz';
 
   return (
     <div className="max-w-[800px] mx-auto px-6 py-12">
@@ -81,19 +91,14 @@ export default async function LessonPage({ params }: Props) {
       </p>
 
       {/* ── Lesson Content ──────────── */}
-      {isInteractive ? (
+      {usesLessonContent ? (
         <div className="mb-12">
           <LessonContent
             lesson={lesson}
             shortcuts={shortcutObjs}
+            currentLessonUrl={currentLessonUrl}
             nextLessonUrl={nextLesson ? `/courses/${nextLesson.courseId}/${nextLesson.lessonId}` : null}
           />
-        </div>
-      ) : lesson.contentType === 'quiz' ? (
-        <div className="mb-12 bg-surface border border-border rounded-2xl p-12 text-center">
-          <p className="text-[15px] text-ink-secondary font-light">
-            测验功能即将推出。请先完成互动练习。
-          </p>
         </div>
       ) : (
         <>
@@ -111,11 +116,29 @@ export default async function LessonPage({ params }: Props) {
               </div>
             </div>
           )}
+
+          {gestureObjs.length > 0 && (
+            <div className="mb-12">
+              <h2 className="font-[var(--font-display)] text-lg font-[400] tracking-[-0.01em] mb-4">
+                本课涉及的手势
+              </h2>
+              <div className="grid gap-3 md:grid-cols-2">
+                {gestureObjs.map((gesture) => (
+                  <GestureReferenceCard
+                    key={gesture.id}
+                    gesture={gesture}
+                    compact
+                    fromLessonUrl={currentLessonUrl}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </>
       )}
 
       {/* ── Navigation ──────────────── */}
-      {!isInteractive && (
+      {!usesLessonContent && (
         <div className="flex items-center justify-between pt-8 border-t border-border-light">
           {prevLesson ? (
             <Link

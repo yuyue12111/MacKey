@@ -67,9 +67,13 @@ export default function InteractiveLesson({
 }: InteractiveLessonProps) {
   const completeLesson = useProgressStore((s) => s.completeLesson);
   const showWindows = usePreferenceStore((s) => s.showWindowsComparison);
+  const interactiveConfig = lesson.interactive?.config as Record<string, unknown> | undefined;
 
   // Detect targetKeys exercise (for modifier key recognition)
-  const targetKeys = (lesson.interactive?.config?.targetKeys as string[] | undefined) ?? [];
+  const targetKeys = useMemo(
+    () => (interactiveConfig?.targetKeys as string[] | undefined) ?? [],
+    [interactiveConfig]
+  );
   const isTargetKeyExercise = shortcuts.length === 0 && targetKeys.length > 0;
   const itemCount = isTargetKeyExercise ? targetKeys.length : shortcuts.length;
 
@@ -163,7 +167,6 @@ export default function InteractiveLesson({
       wrongAttemptsRef.current = attempts;
       setWrongAttempts(attempts);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shortcuts]);
 
   const { pressedKeys, reset } = useKeyDetector({
