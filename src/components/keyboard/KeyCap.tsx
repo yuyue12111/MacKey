@@ -1,9 +1,11 @@
+import type { CSSProperties } from 'react';
 import { cn } from '@/lib/cn';
 
 interface KeyCapProps {
   label: string;
   subLabel?: string;
   width: number; // 1u = 46px
+  height?: number;
   isModifier?: boolean;
   winBadge?: string;
   highlighted?: boolean;
@@ -14,6 +16,7 @@ interface KeyCapProps {
   onMouseUp?: () => void;
   onMouseLeave?: () => void;
   className?: string;
+  style?: CSSProperties;
 }
 
 const BASE = 46;
@@ -22,6 +25,7 @@ export default function KeyCap({
   label,
   subLabel,
   width,
+  height = BASE,
   isModifier,
   winBadge,
   highlighted,
@@ -32,17 +36,19 @@ export default function KeyCap({
   onMouseUp,
   onMouseLeave,
   className,
+  style,
 }: KeyCapProps) {
+  const isCompact = height < 30;
+
   return (
     <div
       onClick={onClick}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseLeave={onMouseLeave}
-      style={{ width: width * BASE }}
+      style={{ width: width * BASE, height, ...style }}
       className={cn(
         'relative flex flex-col items-center justify-center rounded-lg cursor-pointer select-none transition-all duration-150 flex-shrink-0',
-        'h-[46px]',
         isModifier ? 'bg-[#FAFAF8]' : 'bg-key-bg',
         'border border-[#D1CFC9]',
         'shadow-[0_1px_0_1px_rgba(0,0,0,0.04),0_2px_6px_rgba(0,0,0,0.06)]',
@@ -60,6 +66,7 @@ export default function KeyCap({
       <span
         className={cn(
           'text-[13px] font-[420] text-ink',
+          isCompact && 'text-[11px]',
           isModifier && 'text-xs font-normal text-ink-secondary',
           accent && 'text-gold-dim font-[550]',
           highlighted && 'text-gold-dim font-[550]'
@@ -68,7 +75,7 @@ export default function KeyCap({
         {label}
       </span>
       {subLabel && (
-        <span className="text-[9px] font-normal text-ink-tertiary mt-px">
+        <span className={cn('text-[9px] font-normal text-ink-tertiary mt-px', isCompact && 'text-[8px]')}>
           {subLabel}
         </span>
       )}
